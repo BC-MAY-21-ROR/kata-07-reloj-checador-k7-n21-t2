@@ -16,3 +16,4 @@ test:
 
 production:
   database: <%= ENV['DATABASE_URL'] %>
+  
