@@ -1,0 +1,230 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import './variables.scss';
+@import './clearStyles.scss';
+
+body{
+  font-family: $poppins;
+  background-color: $bg-color;
+  color: $font-color-primary;
+}
+nav{
+  width: 100%;
+  display: flex;
+  background-color: $color-primary;
+  border-bottom: 1px solid $color-secondary;
+  justify-content: space-between;
+  padding: 8px 60px;
+
+  .banner{
+    display: flex;
+    .page-title{
+      font-weight: 700;
+      font-size: 18px;
+      padding: 10px 20px;
+    }
+    .logo{
+      width: 45px;
+      height: 45px;
+      .clock-container{
+        width: 45px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: $color-secondary-light;
+        margin-bottom: 30px;
+        .clock-inside{
+          width: 35px;
+          height: 35px;
+          background-color: $color-secondary;
+          position: relative;
+          border-radius: inherit;
+          .minutes-logo{
+            height: 35%;
+            width: 3px;
+            border-radius: none;
+            background-color: $color-secondary-light;
+            position: absolute;
+            border-radius: 10px;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) rotate(180deg); 
+            transform-origin: top;
+          }
+          .hours-logo{
+            height: 27%;
+            width: 3px;
+            border-radius: 10px;
+            background-color: $color-primary;;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) rotate(180deg); 
+            transform-origin: top;
+          }
+        }
+      }
+    }
+  }
+
+  .navigation{
+    background-color: $color-secondary;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    a{
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+    }
+  } 
+}
+main{
+  display: flex;
+  justify-content: space-between;
+  margin: 5% 230px;
+   .col-left{
+    width: 47%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: $color-primary;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+    .date{
+      text-align: center;
+      font-weight: 400;
+      margin-bottom: 30px;
+      font-size: 1.5em;
+    }
+    .hour{
+      font-size: 3em;
+    }
+    .clock-container{
+      width: 200px;
+      height: 200px;
+      border: $test-boder;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background-color: $color-secondary-light;
+      margin-bottom: 30px;
+      .clock-inside{
+        width: 170px;
+        height: 170px;
+        background-color: $color-secondary;
+        position: relative;
+        border-radius: inherit;
+        .minutes{
+          height: 35%;
+          width: 12px;
+          border-radius: none;
+          background-color: $color-secondary-light;
+          position: absolute;
+          border-radius: 10px;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) rotate(180deg); 
+          transform-origin: top;
+        }
+        .hours{
+          height: 27%;
+          width: 12px;
+          border-radius: 10px;
+          background-color: $color-primary;;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) rotate(180deg); 
+          transform-origin: top;
+        }
+      }
+    }
+   }
+   .col-right{
+    width: 47%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    .branch-container{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 30px;
+      background-color: $color-primary;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+      p, select{
+        margin-bottom: 15px;
+      }
+      select{
+        background-color: $color-primary;
+        color: $font-color-secondary;
+        width: 100%;
+        text-align: center;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 10px;
+        border-color: $color-secondary-light;
+      }
+    }
+    .check-container{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px;
+      background-color: $color-primary;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+      input, p, .button-container{
+        margin-bottom: 25px;
+      }
+      input{
+        background-color: $color-primary;
+        color: $font-color-secondary;
+        width: 100%;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 10px;
+        border: 1px solid $color-secondary-light;
+      }
+      .button-container{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        button{
+          width: 40%;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          border-radius: 10px;
+          border: none;
+          color: $font-color-primary;
+          font-weight: 700;
+        }
+        .button-success{
+          background-color: $button-success;
+        }
+        .button-danger{
+          background-color: $button-danger;
+        }
+      }
+    }
+   }
+}
+
