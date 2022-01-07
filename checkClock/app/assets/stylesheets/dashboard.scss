@@ -1,0 +1,274 @@
+// Place all the styles related to the Dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import 'variables.scss';
+@import 'clearStyles.scss';
+main{
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  nav{
+    background-color: $color-primary;
+    width: 12%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .navigation{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px 0px;
+      .logo{
+        width: 45px;
+        height: 45px;
+        .clock-container{
+          width: 45px;
+          height: 45px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          background-color: $color-secondary-light;
+          margin-bottom: 30px;
+          .clock-inside{
+            width: 35px;
+            height: 35px;
+            background-color: $color-secondary;
+            position: relative;
+            border-radius: inherit;
+            .minutes-logo{
+              height: 35%;
+              width: 3px;
+              border-radius: none;
+              background-color: $color-secondary-light;
+              position: absolute;
+              border-radius: 10px;
+              top: 50%;
+              left: 50%;
+              transform: translateX(-50%) rotate(180deg); 
+              transform-origin: top;
+            }
+            .hours-logo{
+              height: 27%;
+              width: 3px;
+              border-radius: 10px;
+              background-color: $color-primary;;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translateX(-50%) rotate(180deg); 
+              transform-origin: top;
+            }
+          }
+        }
+      }
+      .title{
+        .head-title{
+          color: $font-color-primary;
+          font-weight: 700;
+          font-size: 18px;
+          margin-top: 10px;
+        }
+        .head-subtitle{
+          color: $font-color-secondary;
+          font-weight: 400;
+          font-size: 15px;
+        }
+      }
+      .menu-options{
+        width: 100%;
+        padding-top: 20px;
+        ul li a{
+          text-decoration: none;
+          color: $font-color-secondary;
+          font-weight: 500;
+          font-size: 15px;
+          
+        }
+        ul li{
+          list-style-type: none;
+          width: 100%;
+          text-align: left;
+          padding-left: 15px;
+          margin-bottom: 5px;
+        }
+        ul{
+          width: 100%;
+        }
+        .active-option{
+          box-shadow: inset 7px 1px 0px -1px $button-success;
+          a{
+            color: $button-success;
+          }
+        }
+      }
+    }
+    
+    .logout-container{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      a{
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        width: 95%;
+        padding: 5px;
+        border-radius: 10px;
+        color: $font-color-primary;
+        background-color: $color-secondary;
+        font-size: 15px;
+      }
+    }
+  }
+  section{
+    width: 88%;
+    height: 100%;
+    background-color: $color-secondary;
+    display: flex;
+    flex-direction: column;
+    header{
+      padding: 20px;
+      .page-title{
+        font-size: 2em;
+        font-weight: 400;
+        color: $font-color-primary;
+      }
+    }
+    .main{
+      .row-one{
+        display: flex;
+        .col-left{
+          padding-left: 20px;
+          width: 40%;
+          .info-branches{
+            margin-bottom: 30px;
+          }
+          .info-branches, .info-employees{
+            display: flex;
+            flex-wrap: wrap;
+            padding: 30px 20px 0px 30px;
+            background-color: $color-primary;
+            border-radius: 20px;
+            color: white;
+            .card-title{
+              display: block;
+              width: 100%;
+            }
+            .card-info{
+              color: $font-color-secondary;
+              line-height: 75px;
+              margin-left: 20px;
+            }
+            .card-percent{
+              font-size: 2.5em;
+            }
+          }
+        }
+        .col-center{
+          width: 25%;
+          padding: 0px 20px 0px 20px;
+          .employees, .offices{
+            margin-bottom: 25px;
+          }
+          .link-options{
+            width: 100%;
+            border-radius: 20px;
+            background-color: $color-primary;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 0px;
+            p{
+              color: $font-color-secondary;
+              font-size: 14px;
+            }
+            a{
+              color: $font-color-primary;
+              text-decoration: none;
+              font-size: 19px;
+              letter-spacing: 2px;
+            }
+          }
+        }
+        .col-right{
+          width: 35%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          background-color: $color-primary;
+          border-radius: 20px;
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+          margin-right: 20px;
+          .date{
+            text-align: center;
+            font-weight: 400;
+            margin-bottom: 15px;
+            font-size: 1em;
+            letter-spacing: 2px;
+            color: $font-color-primary;
+          }
+          .hour{
+            font-size: 2em;
+            color: $font-color-primary;
+            #hour{
+              text-align: center;
+            }
+          }
+          .clock-container{
+            width: 150px;
+            height: 150px;
+            border: $test-boder;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: $color-secondary-light;
+            margin-bottom: 10px;
+            .clock-inside{
+              width: 120px;
+              height: 120px;
+              background-color: $color-secondary;
+              position: relative;
+              border-radius: inherit;
+              .minutes{
+                height: 35%;
+                width: 12px;
+                border-radius: none;
+                background-color: $color-secondary-light;
+                position: absolute;
+                border-radius: 10px;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) rotate(180deg); 
+                transform-origin: top;
+              }
+              .hours{
+                height: 27%;
+                width: 12px;
+                border-radius: 10px;
+                background-color: $color-primary;;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) rotate(180deg); 
+                transform-origin: top;
+              }
+            }
+          }
+         }
+      }
+    }
+  }
+}

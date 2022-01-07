@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+​
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/AdminDashboard.css">
+  <title>Document</title>
+</head>
+​
+<body>
+  <main>
+    <nav>
+      <div class="navigation">
+        <div class="logo">
+          <div class="clock-container">
+            <div class="clock-inside">
+              <div class="minutes-logo"></div>
+              <div class="hours-logo"></div>
+            </div>
+          </div>
+        </div>
+        <div class="title">
+          <p class="head-title">Check Clock</p>
+          <p class="head-subtitle">Admin Tools</p>
+        </div>
+        <div class="menu-options">
+          <ul>
+            <li class="active-option"><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="#"><i class="fas fa-users"></i> Employees</a></li>
+            <li><a href="#"><i class="fas fa-hotel"></i> Branch Offices</a></li>
+            <li><a href="#"><i class="fas fa-chart-bar"></i> Reports</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="logout-container">
+        <a href="#">Log out</a>
+      </div>
+    </nav>
+    <section>
+      <header>
+        <p class="page-title">Dashboard</p>
+      </header>
+      <div class="main">
+        <div class="row-one">
+          <div class="col-left">
+            <div class="info-branches">
+              <p class="card-title">Branches</p>
+              <p class="card-percent">65%</p>
+              <p class="card-info">of the Branches are open today</p>
+            </div>
+            <div class="info-employees">
+              <p class="card-title">Employees</p>
+              <p class="card-percent">65%</p>
+              <p class="card-info">of the employees are work today</p>
+            </div>
+          </div>
+          <div class="col-center">
+            <div class="link-options employees">
+              <p>Manage</p>
+              <a href="#">Employees</a>
+            </div>
+            <div class="link-options offices">
+              <p>Manage</p>
+              <a href="#">Branch Offices</a>
+            </div>
+            <div class="link-options">
+              <p>View</p>
+              <a href="#">Reports</a>
+            </div>
+          </div>
+          <div class="col-right">
+            <div class="date">
+              <p id="date">o</p>
+            </div>
+            <div class="clock-container">
+              <div class="clock-inside">
+      
+                <div class="minutes"></div>
+                <div class="hours"></div>
+      
+              </div>
+            </div>
+            <div class="hour">
+              <p id="hour">00:00:00</p>
+            </div>
+          </div>
+        </div>
+    </section>
+​
+​
+  </main>
+​
+</body>
+<script src="analogicClock.js"></script>
+<script src="homepage.js"></script>
+<script src="https://kit.fontawesome.com/e753149fdd.js" crossorigin="anonymous"></script>
+​<%= javascript_pack_tag 'homepage' %>
+<%= javascript_pack_tag 'analogic' %>
+</html>
