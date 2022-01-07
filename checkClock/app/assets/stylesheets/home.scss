@@ -70,11 +70,11 @@ nav {
   .navigation {
     background-color: $color-secondary;
     border-radius: 15px;
-    font-family: "Poppins", sans-serif;
+    font-family: $poppins;
     padding: 10px 20px;
     cursor: pointer;
     a {
-      color: white;
+      color: $font-color-primary;
       font-size: 14px;
       text-decoration: none;
     }
