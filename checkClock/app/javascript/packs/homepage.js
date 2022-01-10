@@ -10,10 +10,6 @@ function getMonthStr(month){
 function printHour () {
   const currentDate = new Date();
   const hour = document.querySelector('#hour');
-  // const manecillaHour = document.querySelector(".hours")
-  // const manecillaMinutos = document.querySelector(".hours")
-  // manecillaHour.style.transform = `translate(-50%) rotate(${180 + currentDate.getHours() / 6}deg)`
-  // manecillaMinutos.style.transform = `rotate(${360 * 6 / 12}deg)`
   hour.textContent = `${getTimeStr(currentDate.getHours())}:${getTimeStr(currentDate.getMinutes())}:${getTimeStr(currentDate.getSeconds())}`
 }
 
