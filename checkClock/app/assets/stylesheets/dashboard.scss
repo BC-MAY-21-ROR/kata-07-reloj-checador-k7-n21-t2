@@ -1,68 +1,65 @@
-// Place all the styles related to the Dashboard controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
 @import 'variables.scss';
 @import 'clearStyles.scss';
 main{
-  display: flex;
-  justify-content: center;
   align-items: start;
-  height: 100vh;
+  display: flex;
   font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  justify-content: center;
   nav{
     background-color: $color-primary;
-    width: 12%;
-    height: 100%;
     display: flex;
     flex-direction: column;
+    height: 100%;
     justify-content: space-between;
+    width: 12%;
     .navigation{
+      align-items: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
-      text-align: center;
       padding: 20px 0px;
+      text-align: center;
       .logo{
-        width: 45px;
         height: 45px;
+        width: 45px;
         .clock-container{
-          width: 45px;
-          height: 45px;
-          display: flex;
-          justify-content: center;
           align-items: center;
-          border-radius: 50%;
           background-color: $color-secondary-light;
+          border-radius: 50%;
+          display: flex;
+          height: 45px;
+          justify-content: center;
           margin-bottom: 30px;
+          width: 45px;
           .clock-inside{
-            width: 35px;
-            height: 35px;
             background-color: $color-secondary;
-            position: relative;
             border-radius: inherit;
+            height: 35px;
+            position: relative;
+            width: 35px;
             .minutes-logo{
-              height: 35%;
-              width: 3px;
-              border-radius: none;
               background-color: $color-secondary-light;
-              position: absolute;
               border-radius: 10px;
-              top: 50%;
+              border-radius: none;
+              height: 35%;
               left: 50%;
-              transform: translateX(-50%) rotate(180deg); 
+              position: absolute;
+              top: 50%;
               transform-origin: top;
+              transform: translateX(-50%) rotate(180deg); 
+              width: 3px;
             }
             .hours-logo{
-              height: 27%;
-              width: 3px;
-              border-radius: 10px;
               background-color: $color-primary;;
+              border-radius: 10px;
+              height: 27%;
+              left: 50%;
               position: absolute;
               top: 50%;
-              left: 50%;
-              transform: translateX(-50%) rotate(180deg); 
               transform-origin: top;
+              transform: translateX(-50%) rotate(180deg); 
+              width: 3px;
             }
           }
         }
@@ -70,32 +67,31 @@ main{
       .title{
         .head-title{
           color: $font-color-primary;
-          font-weight: 700;
           font-size: 18px;
+          font-weight: 700;
           margin-top: 10px;
         }
         .head-subtitle{
           color: $font-color-secondary;
-          font-weight: 400;
           font-size: 15px;
+          font-weight: 400;
         }
       }
       .menu-options{
-        width: 100%;
         padding-top: 20px;
+        width: 100%;
         ul li a{
-          text-decoration: none;
           color: $font-color-secondary;
-          font-weight: 500;
           font-size: 15px;
-          
+          font-weight: 500;
+          text-decoration: none;
         }
         ul li{
           list-style-type: none;
-          width: 100%;
-          text-align: left;
-          padding-left: 15px;
           margin-bottom: 5px;
+          padding-left: 15px;
+          text-align: left;
+          width: 100%;
         }
         ul{
           width: 100%;
@@ -110,36 +106,36 @@ main{
     }
     
     .logout-container{
-      width: 100%;
+      align-items: center;
       display: flex;
       justify-content: center;
-      align-items: center;
       padding: 15px;
+      width: 100%;
       a{
+        background-color: $color-secondary;
+        border-radius: 10px;
+        color: $font-color-primary;
         display: block;
+        font-size: 15px;
+        padding: 5px;
         text-align: center;
         text-decoration: none;
         width: 95%;
-        padding: 5px;
-        border-radius: 10px;
-        color: $font-color-primary;
-        background-color: $color-secondary;
-        font-size: 15px;
       }
     }
   }
   section{
-    width: 88%;
-    height: 100%;
     background-color: $color-secondary;
     display: flex;
     flex-direction: column;
+    height: 100%;
+    width: 88%;
     header{
       padding: 20px;
       .page-title{
+        color: $font-color-primary;
         font-size: 2em;
         font-weight: 400;
-        color: $font-color-primary;
       }
     }
     .main{
@@ -152,12 +148,12 @@ main{
             margin-bottom: 30px;
           }
           .info-branches, .info-employees{
-            display: flex;
-            flex-wrap: wrap;
-            padding: 30px 20px 0px 30px;
             background-color: $color-primary;
             border-radius: 20px;
             color: white;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 30px 20px 0px 30px;
             .card-title{
               display: block;
               width: 100%;
@@ -173,97 +169,97 @@ main{
           }
         }
         .col-center{
-          width: 25%;
           padding: 0px 20px 0px 20px;
+          width: 25%;
           .employees, .offices{
             margin-bottom: 25px;
           }
           .link-options{
-            width: 100%;
-            border-radius: 20px;
+            align-items: center;
             background-color: $color-primary;
+            border-radius: 20px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
             padding: 15px 0px;
+            width: 100%;
             p{
               color: $font-color-secondary;
               font-size: 14px;
             }
             a{
               color: $font-color-primary;
-              text-decoration: none;
               font-size: 19px;
               letter-spacing: 2px;
+              text-decoration: none;
             }
           }
         }
         .col-right{
-          width: 35%;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
           align-items: center;
-          padding-top: 20px;
-          padding-bottom: 20px;
           background-color: $color-primary;
           border-radius: 20px;
           box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
           margin-right: 20px;
+          padding-bottom: 20px;
+          padding-top: 20px;
+          width: 35%;
           .date{
-            text-align: center;
-            font-weight: 400;
-            margin-bottom: 15px;
-            font-size: 1em;
-            letter-spacing: 2px;
             color: $font-color-primary;
+            font-size: 1em;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-align: center;
           }
           .hour{
-            font-size: 2em;
             color: $font-color-primary;
+            font-size: 2em;
             #hour{
               text-align: center;
             }
           }
           .clock-container{
-            width: 150px;
-            height: 150px;
+            align-items: center;
+            background-color: $color-secondary-light;
+            border-radius: 50%;
             border: $test-boder;
             display: flex;
+            height: 150px;
             justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            background-color: $color-secondary-light;
             margin-bottom: 10px;
+            width: 150px;
             .clock-inside{
-              width: 120px;
-              height: 120px;
               background-color: $color-secondary;
-              position: relative;
               border-radius: inherit;
+              height: 120px;
+              position: relative;
+              width: 120px;
               .minutes{
-                height: 35%;
-                width: 12px;
-                border-radius: none;
                 background-color: $color-secondary-light;
-                position: absolute;
                 border-radius: 10px;
-                top: 50%;
+                border-radius: none;
+                height: 35%;
                 left: 50%;
-                transform: translateX(-50%) rotate(180deg); 
+                position: absolute;
+                top: 50%;
                 transform-origin: top;
+                transform: translateX(-50%) rotate(180deg); 
+                width: 12px;
               }
               .hours{
-                height: 27%;
-                width: 12px;
-                border-radius: 10px;
                 background-color: $color-primary;;
+                border-radius: 10px;
+                height: 27%;
+                left: 50%;
                 position: absolute;
                 top: 50%;
-                left: 50%;
-                transform: translateX(-50%) rotate(180deg); 
                 transform-origin: top;
+                transform: translateX(-50%) rotate(180deg); 
+                width: 12px;
               }
             }
           }
