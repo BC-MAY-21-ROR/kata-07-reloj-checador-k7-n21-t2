@@ -6,6 +6,7 @@ body {
   background-color: $bg-color;
   color: $font-color-primary;
 }
+
 nav {
   background-color: $color-primary;
   border-bottom: 1px solid $color-secondary;
@@ -16,14 +17,17 @@ nav {
 
   .banner {
     display: flex;
+
     .page-title {
       font-size: 18px;
       font-weight: 700;
       padding: 10px 20px;
     }
+
     .logo {
       height: 45px;
       width: 45px;
+
       .clock-container {
         align-items: center;
         background-color: $color-secondary-light;
@@ -33,12 +37,14 @@ nav {
         justify-content: center;
         margin-bottom: 30px;
         width: 45px;
+
         .clock-inside {
           background-color: $color-secondary;
           border-radius: inherit;
           height: 35px;
           position: relative;
           width: 35px;
+
           .minutes-logo {
             background-color: $color-secondary-light;
             border-radius: 10px;
@@ -51,6 +57,7 @@ nav {
             transform: translateX(-50%) rotate(180deg);
             width: 3px;
           }
+
           .hours-logo {
             background-color: $color-primary;
             border-radius: 10px;
@@ -62,9 +69,13 @@ nav {
             transform: translateX(-50%) rotate(180deg);
             width: 3px;
           }
+
         }
+
       }
+
     }
+
   }
 
   .navigation {
@@ -73,17 +84,22 @@ nav {
     font-family: $poppins;
     padding: 10px 20px;
     cursor: pointer;
+
     a {
       color: $font-color-primary;
       font-size: 14px;
       text-decoration: none;
     }
+
   }
+
 }
+
 main {
   display: flex;
   justify-content: space-between;
   margin: 5% 230px;
+
   .col-left {
     align-items: center;
     background-color: $color-primary;
@@ -95,15 +111,18 @@ main {
     padding-bottom: 30px;
     padding-top: 30px;
     width: 47%;
+
     .date {
       font-size: 1.5em;
       font-weight: 400;
       margin-bottom: 30px;
       text-align: center;
     }
+
     .hour {
       font-size: 3em;
     }
+
     .clock-container {
       align-items: center;
       background-color: $color-secondary-light;
@@ -114,12 +133,14 @@ main {
       justify-content: center;
       margin-bottom: 30px;
       width: 200px;
+
       .clock-inside {
         background-color: $color-secondary;
         border-radius: inherit;
         height: 170px;
         position: relative;
         width: 170px;
+
         .minutes {
           background-color: $color-secondary-light;
           border-radius: 10px;
@@ -132,6 +153,7 @@ main {
           transform: translateX(-50%) rotate(180deg);
           width: 12px;
         }
+
         .hours {
           background-color: $color-primary;
           border-radius: 10px;
@@ -143,15 +165,20 @@ main {
           transform: translateX(-50%) rotate(180deg);
           width: 12px;
         }
+
       }
+
     }
+
   }
+
   .col-right {
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 47%;
+
     .branch-container {
       align-items: center;
       background-color: $color-primary;
@@ -162,10 +189,12 @@ main {
       justify-content: center;
       padding: 30px;
       width: 100%;
+
       p,
       select {
         margin-bottom: 15px;
       }
+
       select {
         background-color: $color-primary;
         border-color: $color-secondary-light;
@@ -176,7 +205,9 @@ main {
         text-align: center;
         width: 100%;
       }
+
     }
+
     .check-container {
       align-items: center;
       background-color: $color-primary;
@@ -187,11 +218,13 @@ main {
       justify-content: space-between;
       padding: 30px;
       width: 100%;
+
       input,
       p,
       .button-container {
         margin-bottom: 25px;
       }
+
       input {
         background-color: $color-primary;
         border-radius: 10px;
@@ -202,11 +235,13 @@ main {
         text-align: center;
         width: 100%;
       }
+
       .button-container {
         align-items: center;
         display: flex;
         justify-content: space-between;
         width: 100%;
+
         button {
           border-radius: 10px;
           border: none;
@@ -216,13 +251,19 @@ main {
           padding-top: 10px;
           width: 40%;
         }
+
         .button-success {
           background-color: $button-success;
         }
+
         .button-danger {
           background-color: $button-danger;
         }
+
       }
+
     }
+
   }
+
 }
