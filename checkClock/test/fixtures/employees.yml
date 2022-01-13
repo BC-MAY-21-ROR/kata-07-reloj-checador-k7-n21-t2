@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  branch: one
+  name: MyString
+  position: MyString
+  secret_code: 1
+  email: MyString
+
+two:
+  branch: two
+  name: MyString
+  position: MyString
+  secret_code: 1
+  email: MyString
