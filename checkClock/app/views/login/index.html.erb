@@ -1,0 +1,37 @@
+<nav class="home-nav">
+  <div class="banner">
+    <div class="logo">
+      <div class="clock-container">
+        <div class="clock-inside">
+          <div class="minutes-logo"></div>
+          <div class="hours-logo"></div>
+        </div>
+      </div>
+    </div>
+    <div class="page-title">Check clock</div>
+  </div>
+  <div class="navigation-home">
+    <%= link_to "Check Page", "/" %>
+  </div>
+</nav>
+<main class="login-main">
+  <div class="form-container">
+    <form action="">
+      <div class="form-row">
+        <p class="form-title">Administrator Log In</p>
+      </div>
+      <div class="form-row input">
+        <label for="email">Email: </label>
+        <input type="email" name="email" id="email" placeholder="Type your email here">
+      </div>
+      <div class="form-row input">
+        <label for="password">Password: </label>
+        <input type="password" name="password" id="password" placeholder="Type your password here">
+      </div>
+      <div class="form-row">
+        <input type="submit" value="Log In">
+      </div>
+    </form>
+  </div>
+</main>
+<%= javascript_pack_tag 'analogic' %>

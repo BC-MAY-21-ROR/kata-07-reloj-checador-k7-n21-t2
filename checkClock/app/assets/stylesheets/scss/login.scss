@@ -1,0 +1,75 @@
+@import "./variables.scss";
+@import "./clearStyles.scss";
+
+.login-main {
+  width: 100%;
+
+  .form-container {
+    align-items: center;
+    background-color: $color-primary;
+    border-radius: 20px;
+    box-shadow: $box-shadow;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    left: 50%;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 30%;
+
+    .form-title {
+      font-size: 1.5em;
+      font-weight: 700;
+    }
+
+    form {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    .form-row {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 15px 0px;
+
+      input[type="submit"]{
+        background-color: $color-secondary;
+        border-radius: 10px;
+        border: none;
+        color: $font-color-primary;
+        font-weight: 700;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        width: 40%;
+        font-size: 1.2em;
+        letter-spacing: 2px;
+        cursor: pointer;
+        margin-top: 15px;
+      }
+    }
+
+    .input {
+      label{
+        font-size: 1.2em;
+        margin-bottom: 5px;
+      }
+      input {
+        width: 80%;
+        padding: 10px 0px;
+        text-align: center;
+        border: 1px solid $color-secondary-light;
+        border-radius: 6px;
+        background-color: transparent;
+        font-size: 1.2em;
+        color: $font-color-secondary;
+        
+      }
+    }
+  }
+}

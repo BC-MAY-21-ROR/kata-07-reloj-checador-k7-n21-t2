@@ -1,61 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <nav>
-    <div class="banner">
-      <div class="logo">
-        <div class="clock-container">
-          <div class="clock-inside">
-            <div class="minutes-logo"></div>
-            <div class="hours-logo"></div>
-          </div>
-        </div>
-      </div>
-      <div class="page-title">Check clock</div>
-    </div>
-    <div class="navigation">
-      <a href="#">Admin Tools</a>
-    </div>
-  </nav>
-  <main>
-    <div class="col-left">
-      <div class="date">
-        <p id="date">o</p>
-      </div>
+<nav class="home-nav">
+  <div class="banner">
+    <div class="logo">
       <div class="clock-container">
         <div class="clock-inside">
-          <div class="minutes"></div>
-          <div class="hours"></div>
-        </div>
-      </div>
-      <div class="hour">
-        <p id="hour">00:00:00</p>
-      </div>
-    </div>
-    <div class="col-right">
-      <div class="branch-container">
-        <p>Select your branch office: </p>
-        <select name="" id="">
-          <option value="Office 1">Oficce 1</option>
-        </select>
-      </div>
-      <div class="check-container">
-        <p>Check your time: </p>
-        <input type="password" placeholder="Please enter your secret code">
-        <div class="button-container">
-          <button class="button-success">Check In</button>
-          <button class="button-danger">Check Out</button>
+          <div class="minutes-logo"></div>
+          <div class="hours-logo"></div>
         </div>
       </div>
     </div>
-  </main>
-</body>
+    <div class="page-title">Check clock</div>
+  </div>
+  <div class="navigation-home">
+    <%= link_to "Admin Tools", "/admin-login" %>
+  </div>
+</nav>
+<main class="home-main">
+  <div class="col-left">
+    <div class="date">
+      <p id="date">o</p>
+    </div>
+    <div class="clock-container">
+      <div class="clock-inside">
+        <div class="minutes"></div>
+        <div class="hours"></div>
+      </div>
+    </div>
+    <div class="hour">
+      <p id="hour">00:00:00</p>
+    </div>
+  </div>
+  <div class="col-right">
+    <div class="branch-container">
+      <p>Select your branch office: </p>
+      <select name="" id="">
+        <option value="Office 1">Oficce 1</option>
+      </select>
+    </div>
+    <div class="check-container">
+      <p>Check your time: </p>
+      <input type="password" placeholder="Please enter your secret code">
+      <div class="button-container">
+        <button class="button-success">Check In</button>
+        <button class="button-danger">Check Out</button>
+      </div>
+    </div>
+  </div>
+</main>
+
 <%= javascript_pack_tag 'homepage' %>
 <%= javascript_pack_tag 'analogic' %>
-</html>
