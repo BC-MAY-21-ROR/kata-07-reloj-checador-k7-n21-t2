@@ -10,10 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_12_231956) do
+ActiveRecord::Schema.define(version: 2022_01_13_230939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "absences", force: :cascade do |t|
+    t.bigint "employee_id", null: false
+    t.datetime "date_absence"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["employee_id"], name: "index_absences_on_employee_id"
+  end
+
+  create_table "admins", force: :cascade do |t|
+    t.string "email"
+    t.string "password"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "attendances", force: :cascade do |t|
+    t.bigint "employee_id", null: false
+    t.datetime "datetime_in"
+    t.datetime "datetime_out"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["employee_id"], name: "index_attendances_on_employee_id"
+  end
 
   create_table "branches", force: :cascade do |t|
     t.string "name"
@@ -33,5 +57,7 @@ ActiveRecord::Schema.define(version: 2022_01_12_231956) do
     t.index ["branch_id"], name: "index_employees_on_branch_id"
   end
 
+  add_foreign_key "absences", "employees"
+  add_foreign_key "attendances", "employees"
   add_foreign_key "employees", "branches"
 end
