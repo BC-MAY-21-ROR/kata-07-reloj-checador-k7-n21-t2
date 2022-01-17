@@ -1,0 +1,317 @@
+@import 'variables.scss';
+@import 'clearStyles.scss';
+
+body{
+  height: 100vh;
+}
+
+.dashboard-main{
+  align-items: start;
+  display: flex;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  justify-content: center;
+
+  nav{
+    background-color: $color-primary;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    width: 12%;
+
+    .navigation-dashboard{
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px 0px;
+      text-align: center;
+
+      .logo{
+        height: 45px;
+        width: 45px;
+
+        .clock-container{
+          align-items: center;
+          background-color: $color-secondary-light;
+          border-radius: 50%;
+          display: flex;
+          height: 45px;
+          justify-content: center;
+          margin-bottom: 30px;
+          width: 45px;
+
+          .clock-inside{
+            background-color: $color-secondary;
+            border-radius: inherit;
+            height: 35px;
+            position: relative;
+            width: 35px;
+
+            .minutes-logo{
+              background-color: $color-secondary-light;
+              border-radius: 10px;
+              border-radius: none;
+              height: 35%;
+              left: 50%;
+              position: absolute;
+              top: 50%;
+              transform-origin: top;
+              transform: translateX(-50%) rotate(180deg); 
+              width: 3px;
+            }
+
+            .hours-logo{
+              background-color: $color-primary;;
+              border-radius: 10px;
+              height: 27%;
+              left: 50%;
+              position: absolute;
+              top: 50%;
+              transform-origin: top;
+              transform: translateX(-50%) rotate(180deg); 
+              width: 3px;
+            }
+          }
+        }
+      }
+
+      .title{
+        .head-title{
+          color: $font-color-primary;
+          font-weight: 700;
+          font-size: 1.5em;
+          margin-top: 10px;
+        }
+
+        .head-subtitle{
+          color: $font-color-secondary;
+          font-weight: 400;
+          font-size: 1.2em;
+        }
+      }
+
+      .menu-options{
+        padding-top: 20px;
+        width: 100%;
+
+        ul li a{
+          color: $font-color-secondary;
+          font-size: 18px;
+          font-weight: 500;
+          text-decoration: none;
+        }
+
+        ul li{
+          list-style-type: none;
+          margin-bottom: 10px;
+          padding-left: 15px;
+          text-align: left;
+          width: 100%;
+        }
+
+        ul{
+          width: 100%;
+        }
+
+        .active-option{
+          box-shadow: inset 7px 1px 0px -1px $button-success;
+
+          a{
+            color: $button-success;
+          }
+
+        }
+      }
+    }
+    
+    .logout-container{
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      width: 100%;
+
+      a{
+        background-color: $color-secondary;
+        border-radius: 10px;
+        color: $font-color-primary;
+        display: block;
+        font-size: 15px;
+        padding: 5px;
+        text-align: center;
+        text-decoration: none;
+        width: 95%;
+
+      }
+    }
+  }
+  .dashboard-section{
+    background-color: $color-secondary;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 88%;
+
+    header{
+      padding: 20px;
+
+      .page-title{
+        color: $font-color-primary;
+        font-size: 2em;
+        font-weight: 400;
+      }
+    }
+    .main{
+
+      .row-one{
+        display: flex;
+
+        .col-left{
+          padding-left: 20px;
+          width: 40%;
+
+          .info-branches{
+            margin-bottom: 30px;
+          }
+
+          .info-branches, .info-employees{
+            background-color: $color-primary;
+            border-radius: 20px;
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 30px 20px 0px 30px;
+
+            .card-title{
+              display: block;
+              width: 100%;
+            }
+
+            .card-info{
+              color: $font-color-secondary;
+              line-height: 75px;
+              margin-left: 20px;
+            }
+
+            .card-percent{
+              font-size: 2.5em;
+            }
+
+          }
+        }
+        .col-center{
+          padding: 0px 20px 0px 20px;
+          width: 25%;
+
+          .employees, .offices{
+            margin-bottom: 25px;
+          }
+
+          .link-options{
+            align-items: center;
+            background-color: $color-primary;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 15px 0px;
+            width: 100%;
+
+            p{
+              color: $font-color-secondary;
+              font-size: 14px;
+            }
+
+            a{
+              color: $font-color-primary;
+              font-size: 19px;
+              letter-spacing: 2px;
+              text-decoration: none;
+            }
+
+          }
+        }
+        .col-right{
+          align-items: center;
+          background-color: $color-primary;
+          border-radius: 20px;
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin-right: 20px;
+          padding-bottom: 20px;
+          padding-top: 20px;
+          width: 35%;
+
+          .date{
+            color: $font-color-primary;
+            font-size: 1em;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-align: center;
+          }
+          
+          .hour{
+            color: $font-color-primary;
+            font-size: 2em;
+
+            #hour{
+              text-align: center;
+            }
+          }
+
+          .clock-container{
+            align-items: center;
+            background-color: $color-secondary-light;
+            border-radius: 50%;
+            border: $test-boder;
+            display: flex;
+            height: 150px;
+            justify-content: center;
+            margin-bottom: 10px;
+            width: 150px;
+
+            .clock-inside{
+              background-color: $color-secondary;
+              border-radius: inherit;
+              height: 120px;
+              position: relative;
+              width: 120px;
+
+              .minutes{
+                background-color: $color-secondary-light;
+                border-radius: 10px;
+                border-radius: none;
+                height: 35%;
+                left: 50%;
+                position: absolute;
+                top: 50%;
+                transform-origin: top;
+                transform: translateX(-50%) rotate(180deg); 
+                width: 12px;
+
+              }
+
+              .hours{
+                background-color: $color-primary;;
+                border-radius: 10px;
+                height: 27%;
+                left: 50%;
+                position: absolute;
+                top: 50%;
+                transform-origin: top;
+                transform: translateX(-50%) rotate(180deg); 
+                width: 12px;
+              }
+            }
+          }
+         }
+      }
+    }
+  }
+}
+
