@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="logout-container">
-      <a href="#">Log out</a>
+      <%= link_to "Sign out", destroy_admin_session_path, :method => :delete %>
     </div>
   </nav>
   <section class="dashboard-section">
