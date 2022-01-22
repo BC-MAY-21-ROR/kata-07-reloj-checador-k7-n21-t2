@@ -5,10 +5,13 @@ class BranchesController < ApplicationController
   # GET /branches or /branches.json
   def index
     @branches = Branch.all
+    @employees = Employee.all
   end
 
   # GET /branches/1 or /branches/1.json
   def show
+    branch = Branch.find(params[:id])
+    return render json: {"data": branch }, status: :accepted
   end
 
   # GET /branches/new
@@ -23,13 +26,11 @@ class BranchesController < ApplicationController
   # POST /branches or /branches.json
   def create
     @branch = Branch.new(branch_params)
-
+    print(branch_params)
     respond_to do |format|
       if @branch.save
-        format.html { redirect_to @branch, notice: "Branch was successfully created." }
         format.json { render :show, status: :created, location: @branch }
       else
-        format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @branch.errors, status: :unprocessable_entity }
       end
     end
@@ -39,10 +40,8 @@ class BranchesController < ApplicationController
   def update
     respond_to do |format|
       if @branch.update(branch_params)
-        format.html { redirect_to @branch, notice: "Branch was successfully updated." }
         format.json { render :show, status: :ok, location: @branch }
       else
-        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @branch.errors, status: :unprocessable_entity }
       end
     end

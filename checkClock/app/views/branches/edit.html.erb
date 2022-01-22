@@ -1,6 +1,52 @@
-<h1>Editing Branch</h1>
+<main class="crud-forms">
+  <nav>
+    <div class="navigation-dashboard">
+      <div class="logo">
+        <div class="clock-container">
+          <div class="clock-inside">
+            <div class="minutes-logo"></div>
+            <div class="hours-logo"></div>
+          </div>
+        </div>
+      </div>
+      <div class="title">
+        <p class="head-title">Check Clock</p>
+        <p class="head-subtitle">Admin Tools</p>
+      </div>
+      
+      <div class="menu-options">
+        <ul>
+          <li><a href="/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+          <li><a href="#"><i class="fas fa-users"></i> Employees</a></li>
+          <li class="active-option"><a href="#"><i class="fas fa-hotel"></i> Branch Offices</a></li>
+          <li><a href="#"><i class="fas fa-chart-bar"></i> Reports</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="logout-container">
+      <a href="#">Log out</a>
+    </div>
+  </nav>
+  <section class="crud-section-forms">
+    <header>
+      <p class="page-title">Editing branch office</p>
+    </header>
 
-<%= render 'form', branch: @branch %>
+    <div class="form-crud">
+    
+      <div class="form-crud__header">Type new data</div>
+      <%= render 'form', branch: @branch %>
+      <div class="links">
+        <%= link_to 'Show', @branch %> 
+        <%= link_to 'Back', branches_path %>
+      </div>
 
-<%= link_to 'Show', @branch %> |
-<%= link_to 'Back', branches_path %>
+    </div>
+    
+  </section>
+</main>
+<script src="https://kit.fontawesome.com/e753149fdd.js" crossorigin="anonymous"></script>
+<%= javascript_pack_tag 'homepage' %>
+<%= javascript_pack_tag 'analogic' %>
+
+

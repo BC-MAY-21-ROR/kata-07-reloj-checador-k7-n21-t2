@@ -1,29 +1,114 @@
-<p id="notice"><%= notice %></p>
+<main class="crud-main">
+  <nav>
+    <div class="navigation-dashboard">
+      <div class="logo">
+        <div class="clock-container">
+          <div class="clock-inside">
+            <div class="minutes-logo"></div>
+            <div class="hours-logo"></div>
+          </div>
+        </div>
+      </div>
+      <div class="title">
+        <p class="head-title">Check Clock</p>
+        <p class="head-subtitle">Admin Tools</p>
+      </div>
+      
+      <div class="menu-options">
+        <ul>
+          <li><a href="/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+          <li><a href="#"><i class="fas fa-users"></i> Employees</a></li>
+          <li class="active-option"><a href="#"><i class="fas fa-hotel"></i> Branch Offices</a></li>
+          <li><a href="#"><i class="fas fa-chart-bar"></i> Reports</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="logout-container">
+      <a href="#">Log out</a>
+    </div>
+  </nav>
+  <section class="crud-section">
+    <header>
+      <p class="page-title">Branch offices</p>
+      <button id="btnShowCreate">New Branch Office</button>
+      <%# <%= link_to 'New Branch Office', new_branch_path %>
+    </header>
 
-<h1>Branches</h1>
+    <div class="table-container">
+      <div class="table">
+        <div class="table-head">
+          <div>id</div>
+          <div>branch name</div>
+          <div>branch address</div>
+          <div>actions</div>
+        </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+        <div class="table-content">
+          <% @branches.each do |branch| %>
 
-  <tbody>
-    <% @branches.each do |branch| %>
-      <tr>
-        <td><%= branch.name %></td>
-        <td><%= branch.address %></td>
-        <td><%= link_to 'Show', branch %></td>
-        <td><%= link_to 'Edit', edit_branch_path(branch) %></td>
-        <td><%= link_to 'Destroy', branch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          <div><%= branch.id %></div>
+          <div><%= branch.name %></div>
+          <div><%= branch.address %></div>
+          <div class="crud-actions">
+            <button class="buttonShow" id=<%= branch.id %>>Review and Change</button>
+            <% counter = 0 %>
+            <% @employees.each do |employee| %>
+              <%if employee.branch_id == branch.id %>
+                <% counter+= 1 %>
+              <% end %>
+            <% end %>
+            <%if counter > 0 %>
+              <%= link_to 'Destroy', branch, method: :delete, data: {confirm_swal: 'Conflicts with foreign keys', text: 'Remove all employees associated with this branch office', icon: "warning", iconColor: "#FF0000", confirmButtonText: "Continue", action: "false", showCancelButton: "false"} %>
+            <% else %>
+              <%= link_to 'Destroy', branch, method: :delete, data: {confirm_swal: 'Are you sure?', text: 'This is permanently', icon: "warning", iconColor: "#FFC54A", confirmButtonText: "Yes, I want to delete it", action: "true" }%>
+            <% end %>
+          </div>          
+          <% end %>
+        </div>
 
-<br>
+      </div>
+    </div>
+  </section>
+  <aside id="aside-info" class="aside-info">
+      <div class="header-branch-info">
+        <p id="title-branch">Branch #1</p>
+        <i class="fas fa-times" id="close-aside"></i>
+      </div>
+      <hr />
+      <div class="text-field-info">
+        <label for="name">Branch name: </label>
+        <input type="text" id="name" disabled>
+      </div>
+      <div class="text-field-info">
+        <label for="name">Branch address: </label>
+        <input type="text" id="address" disabled>
+      </div>
+      <div id="form-edit-actions">
+        <button id="btnEnabled">Editar</button>
+      </div>
+  </aside>
+  <aside id="aside-create" class="aside-info">
+      <div class="header-branch-info">
+        <p id="title-branch">Create new branch</p>
+        <i class="fas fa-times" id="close-aside-create"></i>
+      </div>
+      <hr />
+      <div class="text-field-info">
+        <label for="name">Branch name: </label>
+        <input type="text" id="newName">
+      </div>
+      <div class="text-field-info">
+        <label for="name">Branch address: </label>
+        <input type="text" id="newAddress">
+      </div>
+      <div id="form-edit-actions">
+        <button id="btnCreate">Save</button>
+      </div>
+  </aside>
 
-<%= link_to 'New Branch', new_branch_path %>
+</main>
+<script src="https://kit.fontawesome.com/e753149fdd.js" crossorigin="anonymous"></script>
+<%= javascript_pack_tag 'homepage' %>
+<%= javascript_pack_tag 'analogic' %>
+<%= javascript_pack_tag 'formEditShow' %>
+<%= javascript_pack_tag 'formCreateBranch' %>
