@@ -33,7 +33,9 @@
     <div class="branch-container">
       <p>Select your branch office: </p>
       <select name="" id="">
-        <option value="Office 1">Oficce 1</option>
+        <% @branches.each do |branch|%>
+        <option value=<%= branch.id %>><%= branch.name %></option>
+        <%end%>
       </select>
     </div>
     <div class="check-container">
@@ -49,3 +51,4 @@
 
 <%= javascript_pack_tag 'homepage' %>
 <%= javascript_pack_tag 'analogic' %>
+<%= javascript_pack_tag 'checkIn' %>

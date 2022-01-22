@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   
   get '/dashboard', to: 'dashboard#index'
   # get '/admin-login', to: 'login#index'
-
+  post '/check-in', to: 'home#check_in'
+  post '/check-employee', to: 'home#check_employee'
 end
 
