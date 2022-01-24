@@ -1,0 +1,21 @@
+<h1>Avg time </h1>
+<table>
+  <thead>
+    <tr>
+      <th>Employee</th>
+      <th>check in time</th>
+      <th>check out time</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% @EmployeeAvgs.each do |employeeTimes| %>
+      <tr>
+        <td><%= employeeTimes[:employeeName] %></td>
+        <td><%= employeeTimes[:checkInAvg] %></td>
+        <td><%= employeeTimes[:checkOutAvg] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

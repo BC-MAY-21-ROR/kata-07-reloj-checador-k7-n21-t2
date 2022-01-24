@@ -1,0 +1,19 @@
+<h1>Absences Reports</h1>
+    <% @EmployeeAbsences.each do |employee| %>
+        <h3><%= employee[:employeeName]  %> Total Absences: <%= employee[:totalAbsences] %></h3>
+        <table>
+            <thead>
+                <tr>
+                <th>Absences</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% employee[:listAbsences].each do |absence| %>
+                <tr>
+                    <td><%= absence.date_absence %></td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    <% end %>
+

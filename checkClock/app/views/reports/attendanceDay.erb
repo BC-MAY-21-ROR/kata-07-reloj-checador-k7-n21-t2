@@ -1,0 +1,25 @@
+<h1>Attendance by day</h1>
+<p>today is the <%= Time.now.day %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Employee</th>
+      <th>check in time</th>
+      <th>check out time</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% @attendancesToday.each do |attendance| %>
+      <tr>
+        <td><%= attendance.employee.name %></td>
+        <td><%= attendance.datetime_in %></td>
+        <td><%= attendance.datetime_out %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
