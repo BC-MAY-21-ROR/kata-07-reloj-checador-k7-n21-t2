@@ -32,7 +32,7 @@
   <div class="col-right">
     <div class="branch-container">
       <p>Select your branch office: </p>
-      <select name="" id="">
+      <select id="selectBranch">
         <% @branches.each do |branch|%>
         <option value=<%= branch.id %>><%= branch.name %></option>
         <%end%>
@@ -40,10 +40,10 @@
     </div>
     <div class="check-container">
       <p>Check your time: </p>
-      <input type="password" placeholder="Please enter your secret code">
+      <input type="password" id="secretCode" placeholder="Please enter your secret code">
       <div class="button-container">
-        <button class="button-success">Check In</button>
-        <button class="button-danger">Check Out</button>
+        <button class="button-success" id="btn-checkIn">Check In</button>
+        <button class="button-danger" id="btn-danger">Check Out</button>
       </div>
     </div>
   </div>
