@@ -47,9 +47,7 @@ class HomeController < ApplicationController
       end
     end
 
-    if counter == 0
-      return render json: {"message": "unregistered checkin" }, status: :forbidden
-    end
+    return render json: { "message": 'unregistered checkin' }, status: :forbidden if counter.zero?
 
     if Attendance.where(employee_id: employee.id).last.datetime_out
       return render json: {"message": "unregistered checkin" }, status: :bad_request
