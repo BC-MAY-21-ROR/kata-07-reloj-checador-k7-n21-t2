@@ -11,7 +11,7 @@
     <div class="page-title">Check clock</div>
   </div>
   <div class="navigation-home">
-    <%= link_to "Admin Dashboard", "/dashboard" %>
+    <%= link_to "Admin Dashboard", "/admins/sign_in" %>
   </div>
 </nav>
 <main class="home-main">
@@ -43,7 +43,7 @@
       <input type="password" id="secretCode" placeholder="Please enter your secret code">
       <div class="button-container">
         <button class="button-success" id="btn-checkIn">Check In</button>
-        <button class="button-danger" id="btn-danger">Check Out</button>
+        <button class="button-danger" id="btn-checkOut">Check Out</button>
       </div>
     </div>
   </div>
@@ -52,3 +52,4 @@
 <%= javascript_pack_tag 'homepage' %>
 <%= javascript_pack_tag 'analogic' %>
 <%= javascript_pack_tag 'checkIn' %>
+<%= javascript_pack_tag 'checkOut' %>

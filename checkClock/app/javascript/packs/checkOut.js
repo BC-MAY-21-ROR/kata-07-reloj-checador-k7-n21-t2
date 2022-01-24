@@ -1,14 +1,15 @@
+import { message } from 'statuses';
 import Swal from 'sweetalert2';
 
 let httpStatus;
 
-const btnCheckIn = document.querySelector("#btn-checkIn");
+const btnCheckOut = document.querySelector("#btn-checkOut");
 const inptSecret = document.querySelector("#secretCode");
-btnCheckIn.addEventListener("click", () => {
-  if (!inptSecret.value) {
+btnCheckOut.addEventListener("click", () => {
+  if (!document.querySelector("#secretCode").value) {
     Swal.fire({
       title: "Please, enter your secret code",
-      text: "The secret code is necessary to check in",
+      text: "The secret code is necessary to check out",
       icon: 'warning',
       iconColor: "#FF0000",
       showCancelButton: false,
@@ -22,17 +23,15 @@ btnCheckIn.addEventListener("click", () => {
   }
 
   const data = {
-    secret_code: document.querySelector("#secretCode").value,
+    secret_code: inptSecret.value,
     branch_id: document.querySelector("#selectBranch").value
   }
   doCheckIn(data);
 })
 
-
-
 async function doCheckIn(data) {
   try {
-    const response = await fetch(`http://localhost:3000/check-employee`, {
+    const response = await fetch(`http://localhost:3000/out-employee`, {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
@@ -40,11 +39,13 @@ async function doCheckIn(data) {
         'Content-Type': 'application/json'
       }
     })
-    const httpStatus = response.status;
+
+    httpStatus = response.status
     const res = await response.json();
+
     if (httpStatus == 404) {
       Swal.fire({
-        title: "Something has gone wrong",
+        title: "Incorrect code",
         text: "This code is not associated with any employee. Try choosing a different branch office",
         icon: 'warning',
         iconColor: "#FF0000",
@@ -71,7 +72,20 @@ async function doCheckIn(data) {
     } else if (httpStatus == 403) {
       Swal.fire({
         title: "Employee checked",
-        text: "This employee already checked in today",
+        text: "This employee has not checked in today",
+        icon: 'warning',
+        iconColor: "#FF0000",
+        showCancelButton: false,
+        confirmButtonText: "OK",
+        confirmButtonColor: "#000126",
+        cancelButtonText: 'Cancel',
+        background: "#2A2B4A",
+        color: "#fff"
+      })
+    } else if (httpStatus == 400) {
+      Swal.fire({
+        title: "Employee checked",
+        text: "This employee already checked out today",
         icon: 'warning',
         iconColor: "#FF0000",
         showCancelButton: false,
@@ -82,11 +96,11 @@ async function doCheckIn(data) {
         color: "#fff"
       })
     } else {
-      let date = new Date(res.attendance.datetime_in)
+      let date = new Date(res.attendance.datetime_out)
       inptSecret.value = ""
       Swal.fire({
         title: `Attendance Succesfully!`,
-        text: `${res.employee.name} check in at ${returnDate(date)}`,
+        text: `${res.employee.name} check out at ${returnDate(date)}`,
         icon: 'success',
         iconColor: "#83DB51",
         showCancelButton: false,

@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   # get '/admin-login', to: 'login#index'
   get '/get-info-employee/:secret_code', to: 'home#get_employee'
   post '/check-employee', to: 'home#check_employee'
+  post '/out-employee', to: 'home#out_employee'
 end
 
