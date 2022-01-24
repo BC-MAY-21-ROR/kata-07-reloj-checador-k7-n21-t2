@@ -18,7 +18,7 @@ class HomeController < ApplicationController
         counter += 1
       end
     end
-    if counter > 0
+    if counter.positive?
       return render json: {message: "This employee is not associated with this branch office" }, status: :forbidden
     end
     attendance = Attendance.create(employee_id: employee.id, datetime_in: Time.now.strftime("%F %T"))
