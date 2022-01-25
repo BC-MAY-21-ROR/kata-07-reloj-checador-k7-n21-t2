@@ -266,10 +266,12 @@ body {
 
         .button-success {
           background-color: $button-success;
+          cursor: pointer;
         }
 
         .button-danger {
           background-color: $button-danger;
+          cursor: pointer;
         }
 
       }

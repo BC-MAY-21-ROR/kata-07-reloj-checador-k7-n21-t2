@@ -11,7 +11,7 @@
     <div class="page-title">Check clock</div>
   </div>
   <div class="navigation-home">
-    <%= link_to "Admin Dashboard", "/dashboard" %>
+    <%= link_to "Admin Dashboard", "/admins/sign_in" %>
   </div>
 </nav>
 <main class="home-main">
@@ -32,16 +32,18 @@
   <div class="col-right">
     <div class="branch-container">
       <p>Select your branch office: </p>
-      <select name="" id="">
-        <option value="Office 1">Oficce 1</option>
+      <select id="selectBranch">
+        <% @branches.each do |branch|%>
+        <option value=<%= branch.id %>><%= branch.name %></option>
+        <%end%>
       </select>
     </div>
     <div class="check-container">
       <p>Check your time: </p>
-      <input type="password" placeholder="Please enter your secret code">
+      <input type="password" id="secretCode" placeholder="Please enter your secret code">
       <div class="button-container">
-        <button class="button-success">Check In</button>
-        <button class="button-danger">Check Out</button>
+        <button class="button-success" id="btn-checkIn">Check In</button>
+        <button class="button-danger" id="btn-checkOut">Check Out</button>
       </div>
     </div>
   </div>
@@ -49,3 +51,5 @@
 
 <%= javascript_pack_tag 'homepage' %>
 <%= javascript_pack_tag 'analogic' %>
+<%= javascript_pack_tag 'checkIn' %>
+<%= javascript_pack_tag 'checkOut' %>
