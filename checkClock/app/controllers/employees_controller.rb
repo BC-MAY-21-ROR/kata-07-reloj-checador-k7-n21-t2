@@ -5,15 +5,25 @@ class EmployeesController < ApplicationController
   # GET /employees or /employees.json
   def index
     @employees = Employee.all
+    @attendances = Attendance.all
+    @branches = Branch.all
   end
 
   # GET /employees/1 or /employees/1.json
   def show
+    employee = Employee.find(params[:id])
+    return render json: {"data": employee }, status: :accepted
   end
 
   # GET /employees/new
   def new
     @employee = Employee.new
+  end
+
+  def changeStatus
+    employee = Employee.find(params[:id])
+    employee.update status: params[:status]
+    employee.save
   end
 
   # GET /employees/1/edit
@@ -23,13 +33,10 @@ class EmployeesController < ApplicationController
   # POST /employees or /employees.json
   def create
     @employee = Employee.new(employee_params)
-
     respond_to do |format|
       if @employee.save
-        format.html { redirect_to @employee, notice: "Employee was successfully created." }
         format.json { render :show, status: :created, location: @employee }
       else
-        format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @employee.errors, status: :unprocessable_entity }
       end
     end
@@ -39,10 +46,8 @@ class EmployeesController < ApplicationController
   def update
     respond_to do |format|
       if @employee.update(employee_params)
-        format.html { redirect_to @employee, notice: "Employee was successfully updated." }
         format.json { render :show, status: :ok, location: @employee }
       else
-        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @employee.errors, status: :unprocessable_entity }
       end
     end

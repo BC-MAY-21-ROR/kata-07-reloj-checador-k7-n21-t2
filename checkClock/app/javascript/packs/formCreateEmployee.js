@@ -1,11 +1,16 @@
 import Swal from 'sweetalert2';
 import url from './url';
+
 let formCreate = document.querySelector("#aside-create");
 const btnClose = document.querySelector("#close-aside-create");
 const buttonShow = document.querySelector("#btnShowCreate");
 const btnCreate = document.querySelector("#btnCreate");
+
 const inpName = document.querySelector("#newName");
-const inpAddress = document.querySelector("#newAddress");
+const inpEmail = document.querySelector("#newEmail");
+const inpSecretCode = document.querySelector("#newSecret");
+const inpPosition = document.querySelector("#newPosition");
+const inpBranch = document.querySelector("#newBranch");
 
 buttonShow.addEventListener("click", () => {
   formCreate.style.transform = "translateX(0%)";
@@ -22,9 +27,13 @@ btnCreate.addEventListener("click", () => {
 function requestCreateBranch() {
   const data = {
     name: inpName.value,
-    address: inpAddress.value
+    position: inpPosition.value,
+    email: inpEmail.value,
+    secret_code: inpSecretCode.value,
+    branch_id: inpBranch.value,
+    status: true
   }
-  fetch(`${url}/branches`, {
+  fetch(`${url}/employees`, {
     method: 'POST',
     body: JSON.stringify(data),
     headers: {
@@ -65,7 +74,7 @@ function requestCreateBranch() {
 }
 
 function validateEmptyFields() {
-  if (!inpAddress.value || !inpName.value) {
+  if (!inpEmail.value || !inpName.value || !inpPosition.value || !inpSecretCode.value || !inpBranch.value) {
     Swal.fire({
       title: "Empty fields",
       text: "Make sure you don't leave empty fields",

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post '/out-employee', to: 'home#out_employee'
   get '/admin-login', to: 'login#index'
 
-  post '/test', to: 'home#getBranches'
+  get '/branches-all', to: 'branches#allBranches'
+  put '/change-status/:id', to: 'employees#changeStatus'
 end
 

@@ -16,8 +16,7 @@ const confirmed = (element, result) => {
       confirmButtonColor: "#000126",
       background: "#2A2B4A",
       color: "#fff"
-    }).then(result => element.click())
-    
+    }).then(result => element.click())   
   }
 };
 
@@ -43,9 +42,10 @@ const showConfirmationDialog = (element) => {
     background: "#2A2B4A",
     color: "#fff"
   }).then(result => {
-    console.log(result);
     if (action == "true") {
-      confirmed(element, result)
+      if(result.isConfirmed){
+        confirmed(element, result)
+      }
     }
   });
 };

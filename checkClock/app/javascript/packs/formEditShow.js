@@ -1,4 +1,6 @@
 import Swal from 'sweetalert2';
+import url from './url';
+
 //Variable for storage the initial info of branch
 let branchData;
 
@@ -8,7 +10,7 @@ const buttonShow = document.querySelectorAll(".buttonShow");
 buttonShow.forEach(element => {
   element.addEventListener("click", () => {
     aside.style.transform = "translateX(0%)";
-    fetch(`http://localhost:3000/branches/${element.id}`, {
+    fetch(`${url}/branches/${element.id}`, {
       method: 'GET',
       headers: {
         'X-CSRF-TOKEN': document.querySelector('[name=csrf-token]').content
@@ -81,7 +83,7 @@ function requestToEdit() {
     name: inpName.value,
     address: inpAddress.value
   }
-  fetch(`http://localhost:3000/branches/${branchData.id}`, {
+  fetch(`${url}/branches/${branchData.id}`, {
       method: 'PUT',
       body: JSON.stringify(data),
       headers: {

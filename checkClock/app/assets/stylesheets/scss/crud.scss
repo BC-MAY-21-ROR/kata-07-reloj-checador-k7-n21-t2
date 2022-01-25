@@ -208,7 +208,7 @@
         }
         .table-content {
           display: grid;
-          grid-template-columns: 0.5fr 1.1fr 1.1fr 0.8fr;
+          grid-template-columns:  0.5fr 1.1fr 1.1fr 0.8fr;
           grid-auto-rows: 40px;
           overflow-y: scroll;
 
@@ -414,6 +414,22 @@
       border: 1px solid $color-secondary-light;
       margin-right: 15px;
       cursor: pointer;
+    }
+    select {
+      background-color: $color-primary;
+      border-color: $color-secondary-light;
+      border-radius: 10px;
+      color: $font-color-secondary;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      text-align: center;
+      width: 80%;
+      font-size: 1em;
+    }
+    select:focus {
+      border: 1px solid rgb(173, 173, 173);
+      color: rgb(173, 173, 173);
+      outline: none;
     }
   }
 }

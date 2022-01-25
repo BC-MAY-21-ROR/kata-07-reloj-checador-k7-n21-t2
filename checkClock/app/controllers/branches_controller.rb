@@ -14,6 +14,11 @@ class BranchesController < ApplicationController
     return render json: {"data": branch }, status: :accepted
   end
 
+  def allBranches
+    branch = Branch.all
+    return render json: {"data": branch }, status: :accepted
+  end
+
   # GET /branches/new
   def new
     @branch = Branch.new
@@ -26,7 +31,6 @@ class BranchesController < ApplicationController
   # POST /branches or /branches.json
   def create
     @branch = Branch.new(branch_params)
-    print(branch_params)
     respond_to do |format|
       if @branch.save
         format.json { render :show, status: :created, location: @branch }
