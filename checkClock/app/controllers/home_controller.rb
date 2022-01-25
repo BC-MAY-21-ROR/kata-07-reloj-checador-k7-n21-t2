@@ -63,7 +63,6 @@ class HomeController < ApplicationController
 
   def getBranches 
     branches = Branch.all
-    print(params[:valor])
     return render json: {"message": branches }, status: :accepted
   end
 
