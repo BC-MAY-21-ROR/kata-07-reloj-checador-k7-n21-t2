@@ -23,11 +23,7 @@ class BranchesController < ApplicationController
   def new
     @branch = Branch.new
   end
-
-  # GET /branches/1/edit
-  def edit
-  end
-
+  
   # POST /branches or /branches.json
   def create
     @branch = Branch.new(branch_params)
