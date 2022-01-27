@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   resources :employees
   resources :branches
 
-  get '/reportsDay', to: 'reports#attendanceDay'
+  #reports
+  get '/attDay', to: 'reports#attendanceDay'
   get '/AvgCheck', to: 'reports#avgCheckTime'
   get '/absences', to: 'reports#absences'
   

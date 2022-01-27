@@ -1,3 +1,45 @@
-// Place all the styles related to the reports controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+@import "./scss/variables.scss";
+
+.reports-title{
+    margin: 3rem auto 0 auto;
+    padding: 1rem;
+    background-color: $color-secondary;
+    max-width: 30rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+
+.reports-table {
+    margin: 2rem auto;
+    padding: 0rem 3rem;
+    padding-bottom: .6rem;
+    border-collapse: collapse;
+    width: 40rem;
+    border-collapse:separate; 
+    border-spacing: 0 1rem;
+    background-color: $color-secondary;
+    border-radius: 1rem;
+
+    td, th {
+        text-align: center;
+        padding: 10px;
+      }
+
+    .employee-col{
+        background-color: $button-success;
+        border-radius: .5rem;
+        max-width: 10rem;
+        box-shadow: $box-shadow;
+
+        a {
+          text-decoration: none; 
+          cursor:pointer;
+          color: inherit;
+          height: 100%;
+          width: 100%;
+          display: block;
+        }
+    }
+
+  }

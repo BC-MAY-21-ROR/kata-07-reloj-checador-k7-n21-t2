@@ -1,12 +1,14 @@
-<h1>Attendance by day</h1>
-<p>today is the <%= Time.now.day %></p>
+<center>
+<h2 class = "reports-title">Attendance for today:
+  <b><%= Time.now.strftime("%d/%m/%Y") %></b>
+</h2>
 
-<table>
+<table class = "reports-table">
   <thead>
     <tr>
-      <th>Employee</th>
-      <th>check in time</th>
-      <th>check out time</th>
+      <th>Employee:</th>
+      <th>check in time:</th>
+      <th>check out time:</th>
     </tr>
   </thead>
 
@@ -14,12 +16,13 @@
 
     <% @attendancesToday.each do |attendance| %>
       <tr>
-        <td><%= attendance.employee.name %></td>
-        <td><%= attendance.datetime_in %></td>
-        <td><%= attendance.datetime_out %></td>
+        <td class = "employee-col"><a href = " <%= "employees/#{attendance.employee.id}"%>"><%= attendance.employee.name%> </a></td>
+        <td><%= attendance.datetime_in.strftime("%H:%M") %></td>
+        <td><%= attendance.datetime_out.strftime("%H:%M") %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<br>
+</center>
 

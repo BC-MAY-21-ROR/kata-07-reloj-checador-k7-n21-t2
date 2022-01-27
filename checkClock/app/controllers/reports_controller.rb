@@ -1,6 +1,6 @@
 class ReportsController < ApplicationController
     def attendanceDay
-        @attendancesToday = Attendance.where "DATE(datetime_in) = DATE(?)", Time.now
+        @attendancesToday = Attendance.where "DATE(datetime_in) = DATE(?)", Time.now.strftime("%F %T")
     end
 
     def avgCheckTime
@@ -9,12 +9,12 @@ class ReportsController < ApplicationController
             employeeAttendances = Attendance.where("employee_id = #{employee.id}")
 
             if employeeAttendances.empty?
-                @EmployeeAvgs.push({ :employeeName => employee.name, :checkInAvg => "No check-in or", :checkOutAvg => 'check-out records found' })
+                @EmployeeAvgs.push({ :employeeName => employee.name, :employee_id => employee.id, :checkInAvg => "--", :checkOutAvg => '--' })
             else
                 #calculate the avg check time
                 avgcheckTimesIn = getAvgCheckInTimes(employeeAttendances,'datetime_in')
                 avgcheckTimesOut = getAvgCheckInTimes(employeeAttendances,'datetime_out')
-                @EmployeeAvgs.push({ :employeeName => employee.name, :checkInAvg => avgcheckTimesIn, :checkOutAvg => avgcheckTimesOut })
+                @EmployeeAvgs.push({ :employeeName => employee.name, :employee_id => employee.id, :checkInAvg => avgcheckTimesIn, :checkOutAvg => avgcheckTimesOut })
             end
         end
     end
@@ -27,7 +27,7 @@ class ReportsController < ApplicationController
         employeeAttendances.each do |attendance| 
             #check for missing data
             if attendance[check].nil?
-                return ("#{check} data missing")
+                return ("--")
             else
                 totalHours += attendance[check].hour
                 totalMinutes += attendance[check].min 
@@ -54,11 +54,11 @@ class ReportsController < ApplicationController
         Employee.all.each do |employee|
             listEmployeeAbsences = employee.absences.order('date_absence DESC')
             totalEmployeeAbsences = employee.absences.length
-            
+
             if totalEmployeeAbsences == 0
-                return
+                next
             else
-                @EmployeeAbsences.push({ :employeeName => employee.name, :listAbsences => listEmployeeAbsences, :totalAbsences => totalEmployeeAbsences })
+                @EmployeeAbsences.push({ :employeeName => employee.name, :employee_id => employee.id, :listAbsences => listEmployeeAbsences, :totalAbsences => totalEmployeeAbsences }) 
             end
 
         end
