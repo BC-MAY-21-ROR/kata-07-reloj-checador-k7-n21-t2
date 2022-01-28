@@ -1,32 +1,5 @@
 <main class="dashboard-main">
-  <nav>
-    <div class="navigation-dashboard">
-      <div class="logo">
-        <div class="clock-container">
-          <div class="clock-inside">
-            <div class="minutes-logo"></div>
-            <div class="hours-logo"></div>
-          </div>
-        </div>
-      </div>
-      <div class="title">
-        <p class="head-title">Check Clock</p>
-        <p class="head-subtitle">Admin Tools</p>
-      </div>
-      
-      <div class="menu-options">
-        <ul>
-          <li class="active-option"><a href="/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-          <li><a href="/employees"><i class="fas fa-users"></i> Employees</a></li>
-          <li><a href="/branches"><i class="fas fa-hotel"></i> Branch Offices</a></li>
-          <li><a href="#"><i class="fas fa-chart-bar"></i> Reports</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="logout-container">
-      <%= link_to "Sign out", destroy_admin_session_path, :method => :delete %>
-    </div>
-  </nav>
+  <%= render 'sidebar.erb' %>
   <section class="dashboard-section">
     <header>
       <p class="page-title">Dashboard</p>
