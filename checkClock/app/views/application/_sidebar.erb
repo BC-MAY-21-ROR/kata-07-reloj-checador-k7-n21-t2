@@ -15,10 +15,9 @@
       
       <div class="menu-options">
         <ul>
-          <li class="active-option"><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-          <li><a href="#"><i class="fas fa-users"></i> Employees</a></li>
-          <li><a href="#"><i class="fas fa-hotel"></i> Branch Offices</a></li>
-          <li><a href="#"><i class="fas fa-chart-bar"></i> Reports</a></li>
+          <li class=<%= @current_uri == "/dashboard" ? "active-option" : nil %>><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+          <li class=<%= @current_uri == "/employees" ? "active-option" : nil %>><a href="#"><i class="fas fa-users"></i> Employees</a></li>
+          <li class=<%= @current_uri == "/branches" ? "active-option" : nil %>><a href="#"><i class="fas fa-hotel"></i> Branch Offices</a></li>
         </ul>
       </div>
     </div>

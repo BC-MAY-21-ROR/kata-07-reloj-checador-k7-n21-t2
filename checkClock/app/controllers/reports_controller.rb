@@ -1,6 +1,8 @@
 class ReportsController < ApplicationController
     def attendanceDay
         @attendancesToday = Attendance.where "DATE(datetime_in) = DATE(?)", Time.now.strftime("%F %T")
+        current_uri = request.env['PATH_INFO']
+        puts current_uri
     end
 
     def avgCheckTime
