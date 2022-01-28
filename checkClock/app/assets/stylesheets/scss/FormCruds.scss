@@ -76,15 +76,15 @@
       .title {
         .head-title {
           color: $font-color-primary;
-          font-weight: 700;
           font-size: 1.5em;
+          font-weight: 700;
           margin-top: 10px;
         }
 
         .head-subtitle {
           color: $font-color-secondary;
-          font-weight: 400;
           font-size: 1.2em;
+          font-weight: 400;
         }
       }
 
@@ -143,12 +143,12 @@
   }
 
   .crud-section-forms {
+    align-items: center;
     background-color: $color-secondary;
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 88%;
-    align-items: center;
 
     header {
       padding: 20px;
@@ -161,26 +161,26 @@
     }
 
     .form-crud {
+      background-color: $color-primary;
+      border-radius: 15px;
       padding: 20px;
       width: 40%;
-      border-radius: 15px;
-      background-color: $color-primary;
 
       .form-crud__header {
+        background-color: $color-secondary;
+        border-radius: 15px;
+        font-size: 1.3em;
+        font-weight: 500;
         padding: 10px;
         text-align: center;
-        border-radius: 15px;
-        background-color: $color-secondary;
         text-transform: uppercase;
-        font-weight: 500;
-        font-size: 1.3em;
       }
       .field {
-        margin: 15px 0px;
+        align-items: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        margin: 15px 0px;
 
         label {
           font-size: 1.2em;
@@ -188,10 +188,10 @@
         }
 
         input {
-          border: none;
           background-color: transparent;
           border-radius: 6px;
           border: 1px solid $color-secondary-light;
+          border: none;
           color: $font-color-secondary;
           font-size: 1.2em;
           padding: 10px 0px;
@@ -206,15 +206,15 @@
       }
 
       .links{
-        display: flex;
         align-items: center;
+        display: flex;
         justify-content: center;
         margin: 15px 0px;
       }
 
       .actions {
-        display: flex;
         align-items: center;
+        display: flex;
         justify-content: center;
         margin: 15px 0px;
 

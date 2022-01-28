@@ -31,13 +31,13 @@
   }
 
   .switches {
-    max-width: 500px;
-    width: 95%;
+    align-items: center;
     border-radius: 5px;
     color: var(--white);
     display: flex;
     justify-content: center;
-    align-items: center;
+    max-width: 500px;
+    width: 95%;
   }
 
   .switches li {
@@ -50,31 +50,31 @@
   }
 
   .switches li::before {
+    color: var(--pink);
     content: counter(switchCounter);
-    position: absolute;
-    top: 50%;
-    left: -30px;
-    transform: translateY(-50%);
     font-size: 2rem;
     font-weight: bold;
-    color: var(--pink);
+    left: -30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .switches label {
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: space-between;
     padding: 15px;
   }
 
   .switches span:last-child {
-    position: relative;
-    width: 50px;
-    height: 26px;
+    background: var(--gray);
     border-radius: 15px;
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
-    background: var(--gray);
+    height: 26px;
+    position: relative;
     transition: all 0.3s;
+    width: 50px;
   }
 
   .switches span:last-child::before,
@@ -84,24 +84,24 @@
   }
 
   .switches span:last-child::before {
-    left: 1px;
-    top: 1px;
-    width: 24px;
-    height: 24px;
     background: var(--white);
     border-radius: 50%;
-    z-index: 1;
+    height: 24px;
+    left: 1px;
+    top: 1px;
     transition: transform 0.3s;
+    width: 24px;
+    z-index: 1;
   }
 
   .switches span:last-child::after {
-    top: 50%;
-    right: 8px;
-    width: 12px;
-    height: 12px;
-    transform: translateY(-50%);
-    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/uncheck-switcher.svg);
     background-size: 12px 12px;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/uncheck-switcher.svg);
+    height: 12px;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
   }
 
   .switches [type="checkbox"]:checked + label span:last-child {
@@ -113,11 +113,10 @@
   }
 
   .switches [type="checkbox"]:checked + label span:last-child::after {
-    width: 14px;
-    height: 14px;
-    /*right: auto;*/
-    left: 8px;
     background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/checkmark-switcher.svg);
     background-size: 14px 14px;
+    height: 14px;
+    left: 8px;
+    width: 14px;
   }
 }
