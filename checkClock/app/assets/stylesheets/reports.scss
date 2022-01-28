@@ -1,44 +1,44 @@
 @import "./scss/variables.scss";
 
 .reports-title{
-    margin: 3rem auto 0 auto;
-    padding: 1rem;
     background-color: $color-secondary;
-    max-width: 30rem;
     border-radius: 1rem;
+    margin: 3rem auto 0 auto;
+    max-width: 30rem;
+    padding: 1rem;
     text-align: center;
 }
 
 
 .reports-table {
-    margin: 2rem auto;
-    padding: 0rem 3rem;
-    padding-bottom: .6rem;
-    border-collapse: collapse;
-    width: 40rem;
-    border-collapse:separate; 
-    border-spacing: 0 1rem;
     background-color: $color-secondary;
+    border-collapse: collapse;
+    border-collapse:separate; 
     border-radius: 1rem;
+    border-spacing: 0 1rem;
+    margin: 2rem auto;
+    padding-bottom: .6rem;
+    padding: 0rem 3rem;
+    width: 40rem;
 
     td, th {
-        text-align: center;
         padding: 10px;
+        text-align: center;
       }
 
     .employee-col{
         background-color: $button-success;
         border-radius: .5rem;
-        max-width: 10rem;
         box-shadow: $box-shadow;
+        max-width: 10rem;
 
         a {
-          text-decoration: none; 
-          cursor:pointer;
           color: inherit;
-          height: 100%;
-          width: 100%;
+          cursor:pointer;
           display: block;
+          height: 100%;
+          text-decoration: none; 
+          width: 100%;
         }
     }
 
