@@ -12,11 +12,11 @@
   </thead>
 
   <tbody>
-       <% employee[:listAbsences].each do |absence| %>
+    <% employee[:listAbsences].each do |absence| %>
       <tr>
       <td><%= absence.date_absence.strftime("%d/%m/%Y") %></td> 
       </tr>
-      <% end %>
+    <% end %>
   </tbody>
 </table>
 <% end %>
