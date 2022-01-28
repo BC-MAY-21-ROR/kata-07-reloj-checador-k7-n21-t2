@@ -1,0 +1,435 @@
+@import "./variables.scss";
+@import "./clearStyles.scss";
+
+.crud-main {
+  align-items: start;
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  justify-content: center;
+
+  nav {
+    background-color: $color-primary;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    width: 12%;
+
+    .navigation-dashboard {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px 0px;
+      text-align: center;
+
+      .logo {
+        height: 45px;
+        width: 45px;
+
+        .clock-container {
+          align-items: center;
+          background-color: $color-secondary-light;
+          border-radius: 50%;
+          display: flex;
+          height: 45px;
+          justify-content: center;
+          margin-bottom: 30px;
+          width: 45px;
+
+          .clock-inside {
+            background-color: $color-secondary;
+            border-radius: inherit;
+            height: 35px;
+            position: relative;
+            width: 35px;
+
+            .minutes-logo {
+              background-color: $color-secondary-light;
+              border-radius: 10px;
+              border-radius: none;
+              height: 35%;
+              left: 50%;
+              position: absolute;
+              top: 50%;
+              transform-origin: top;
+              transform: translateX(-50%) rotate(180deg);
+              width: 3px;
+            }
+
+            .hours-logo {
+              background-color: $color-primary;
+              border-radius: 10px;
+              height: 27%;
+              left: 50%;
+              position: absolute;
+              top: 50%;
+              transform-origin: top;
+              transform: translateX(-50%) rotate(180deg);
+              width: 3px;
+            }
+          }
+        }
+      }
+
+      .title {
+        .head-title {
+          color: $font-color-primary;
+          font-weight: 700;
+          font-size: 1.5em;
+          margin-top: 10px;
+        }
+
+        .head-subtitle {
+          color: $font-color-secondary;
+          font-weight: 400;
+          font-size: 1.2em;
+        }
+      }
+
+      .menu-options {
+        padding-top: 20px;
+        width: 100%;
+
+        ul li a {
+          color: $font-color-secondary;
+          font-size: 18px;
+          font-weight: 500;
+          text-decoration: none;
+        }
+
+        ul li {
+          list-style-type: none;
+          margin-bottom: 10px;
+          padding-left: 15px;
+          text-align: left;
+          width: 100%;
+        }
+
+        ul {
+          width: 100%;
+        }
+
+        .active-option {
+          box-shadow: inset 7px 1px 0px -1px $button-success;
+
+          a {
+            color: $button-success;
+          }
+        }
+      }
+    }
+
+    .logout-container {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      width: 100%;
+
+      a {
+        background-color: $color-secondary;
+        border-radius: 10px;
+        color: $font-color-primary;
+        display: block;
+        font-size: 15px;
+        padding: 5px;
+        text-align: center;
+        text-decoration: none;
+        width: 95%;
+      }
+    }
+  }
+
+  .crud-section {
+    background-color: $color-secondary;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 88%;
+
+    header {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .page-title {
+        color: $font-color-primary;
+        font-size: 2em;
+        font-weight: 400;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 18px;
+        text-decoration: none;
+        color: $font-color-primary;
+        border-radius: 15px;
+        background-color: $bg-color;
+        margin-right: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.075);
+        font-weight: 500;
+        border: 1px solid $color-secondary-light;
+        cursor: pointer;
+      }
+    }
+
+    .table-container {
+      width: 99%;
+      padding: 20px;
+      height: 100vh;
+      overflow-y: hidden;
+
+      .table {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        background-color: $color-primary;
+        padding: 15px;
+        border-radius: 15px;
+        box-shadow: $box-shadow;
+
+        .table-head {
+          display: grid;
+          grid-template-columns: 0.5fr 1.1fr 1.1fr 0.8fr;
+          grid-auto-rows: 40px;
+          position: sticky;
+          width: 100%;
+          background-color: $color-secondary;
+          border-radius: 10px;
+
+          div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            font-weight: 500;
+          }
+        }
+        .table-content {
+          display: grid;
+          grid-template-columns:  0.5fr 1.1fr 1.1fr 0.8fr;
+          grid-auto-rows: 40px;
+          overflow-y: scroll;
+
+          div {
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid $color-secondary;
+          }
+
+          .crud-actions {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+            button {
+              background-color: transparent;
+              border-radius: 8px;
+              border: $test-boder;
+              border: 1px solid $button-success;
+              color: $button-success;
+              font-size: 16px;
+              padding: 2px 8px;
+              text-decoration: none;
+              transition: 0.2s;
+              cursor: pointer;
+            }
+
+            button:hover {
+              color: $font-color-primary;
+              background-color: $button-success;
+            }
+
+            a {
+              background-color: transparent;
+              border-radius: 8px;
+              border: $test-boder;
+              border: 1px solid $button-danger;
+              color: $button-danger;
+              padding: 2px 8px;
+              text-decoration: none;
+              transition: 0.2s;
+              cursor: pointer;
+            }
+
+            a:hover {
+              color: $font-color-primary;
+              background-color: $button-danger;
+            }
+          }
+        }
+
+        .table-content::-webkit-scrollbar {
+          width: 12px;
+          height: 50%;
+        }
+
+        .table-content::-webkit-scrollbar-track {
+          background-color: $color-primary; /* color of the tracking area */
+        }
+
+        .table-content::-webkit-scrollbar-thumb {
+          background-color: $color-secondary-light; /* color of the scroll thumb */
+          border-radius: 20px; /* roundness of the scroll thumb */
+          border: 3px solid $color-secondary-light; /* creates padding around scroll thumb */
+        }
+      }
+    }
+  }
+
+  .aside-info {
+    position: absolute;
+    width: 30%;
+    background-color: $color-primary;
+    box-shadow: 0 0px 40px rgba(0, 0, 0, 0.521);
+    height: 100vh;
+    right: 0%;
+    transform: translateX(100%);
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+
+    .header-branch-info {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      i {
+        font-size: 2em;
+        color: $color-secondary-light;
+        transition: 0.2s;
+      }
+      i:hover {
+        color: $font-color-primary;
+        cursor: pointer;
+      }
+      p {
+        color: $font-color-primary;
+        font-size: 2em;
+        font-weight: 400;
+      }
+    }
+    hr {
+      border-color: $font-color-secondary;
+    }
+    .text-field-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 15px 0px;
+      label {
+        font-size: 1.2em;
+        margin-bottom: 5px;
+      }
+
+      input {
+        border: none;
+        background-color: transparent;
+        border-radius: 6px;
+        border: 1px solid $color-secondary-light;
+        color: $font-color-secondary;
+        font-size: 1.2em;
+        padding: 10px 0px;
+        text-align: center;
+        width: 80%;
+      }
+      .inputActive {
+        color: $font-color-primary;
+        border-color: $font-color-primary;
+      }
+      input:focus {
+        border: 1px solid rgb(173, 173, 173);
+        color: rgb(173, 173, 173);
+        outline: none;
+      }
+    }
+
+    #form-edit-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 15px 0px;
+
+      #btnEnabled {
+        padding: 10px 20px;
+        font-size: 18px;
+        text-decoration: none;
+        color: $font-color-primary;
+        border-radius: 15px;
+        background-color: $bg-color;
+        margin-right: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.075);
+        font-weight: 500;
+        border: 1px solid $color-secondary-light;
+        cursor: pointer;
+      }
+
+      #btnSaveEdit {
+        padding: 10px 20px;
+        font-size: 18px;
+        text-decoration: none;
+        color: $font-color-primary;
+        border-radius: 15px;
+        background-color: $bg-color;
+        margin-right: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.075);
+        font-weight: 500;
+        border: 1px solid $color-secondary-light;
+        margin-right: 15px;
+        cursor: pointer;
+      }
+
+      #btnCancelEdit {
+        padding: 10px 20px;
+        font-size: 18px;
+        text-decoration: none;
+        color: $font-color-primary;
+        border-radius: 15px;
+        background-color: rgba(85, 85, 85, 0.753);
+        margin-right: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.075);
+        font-weight: 500;
+        border: 1px solid $color-secondary-light;
+        margin-right: 15px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  #aside-create {
+    #btnCreate {
+      padding: 10px 20px;
+      font-size: 18px;
+      text-decoration: none;
+      color: $font-color-primary;
+      border-radius: 15px;
+      background-color: $bg-color;
+      margin-right: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.075);
+      font-weight: 500;
+      border: 1px solid $color-secondary-light;
+      margin-right: 15px;
+      cursor: pointer;
+    }
+    select {
+      background-color: $color-primary;
+      border-color: $color-secondary-light;
+      border-radius: 10px;
+      color: $font-color-secondary;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      text-align: center;
+      width: 80%;
+      font-size: 1em;
+    }
+    select:focus {
+      border: 1px solid rgb(173, 173, 173);
+      color: rgb(173, 173, 173);
+      outline: none;
+    }
+  }
+}

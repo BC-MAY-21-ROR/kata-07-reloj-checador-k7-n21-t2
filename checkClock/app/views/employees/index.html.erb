@@ -1,35 +1,144 @@
-<p id="notice"><%= notice %></p>
+<main class="crud-main">
+  <nav>
+    <div class="navigation-dashboard">
+      <div class="logo">
+        <div class="clock-container">
+          <div class="clock-inside">
+            <div class="minutes-logo"></div>
+            <div class="hours-logo"></div>
+          </div>
+        </div>
+      </div>
+      <div class="title">
+        <p class="head-title">Check Clock</p>
+        <p class="head-subtitle">Admin Tools</p>
+      </div>
+      
+      <div class="menu-options">
+        <ul>
+          <li><a href="/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+          <li class="active-option"><a href="/employees"><i class="fas fa-users"></i> Employees</a></li>
+          <li><a href="/branches"><i class="fas fa-hotel"></i> Branch Offices</a></li>
+          <li><a href="#"><i class="fas fa-chart-bar"></i> Reports</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="logout-container">
+      <a href="#">Log out</a>
+    </div>
+  </nav>
+ <section class="crud-section-employees">
+   <header>
+     <p class="page-title">Employees</p>
+     <button id="btnShowCreate">New employee</button>
+     <%# <%= link_to 'New Branch Office', new_branch_path %>
+   </header> 
+   <div class="table-container">
+     <div class="table">
+       <div class="table-head">
+         <div>id</div>
+         <div>employee name</div>
+         <div>email</div>
+         <div>Secret Code</div>
+         <div>Status</div>
+         <div>branch office</div>
+         <div>actions</div>
+       </div> 
+       <div class="table-content">
+          <% @employees.each do |employee| %> 
+          <div><%= employee.id %></div>
+          <div><%= employee.name %></div>
+          <div><%= employee.email %></div>
+          <div><%= employee.secret_code %></div>
+          <div class="switch-status">
+            <ol class="switches">
+              <li>
+                <input type="checkbox" name="check-status" id=<%= employee.id %> <%= employee.status ? "checked" : nil %>>
+                <label for=<%= employee.id %>>
+                <span></span>
+                </label>
+              </li>
+            </ol>
+          </div>
+          <div><%= Branch.find(employee.branch_id).name %></div>
+          <div class="crud-actions">
+            <button class="buttonShow" id=<%= employee.id %>>Review and Change</button>
+          </div>          
+          <% end %>
+        </div> 
+      </div>
+    </div>
+  </section>
+  <aside id="aside-info" class="aside-info">
+      <div class="header-branch-info">
+        <p id="title-branch"></p>
+        <i class="fas fa-times" id="close-aside"></i>
+      </div>
+      <hr />
+      <div class="text-field-info">
+        <label for="name">Name: </label>
+        <input type="text" id="name" disabled>
+      </div>
+      <div class="text-field-info">
+        <label for="email">Email: </label>
+        <input type="text" id="email" disabled>
+      </div>
+      <div class="text-field-info">
+        <label for="secret">Secret code: </label>
+        <input type="text" id="secret" disabled>
+      </div>
+      <div class="text-field-info">
+        <label for="position">Position: </label>
+        <input type="text" id="position" disabled>
+      </div>
+      <div class="text-field-info">
+        <label for="branch">Branch: </label>
+        <input type="text" id="branch" disabled>
+      </div>
+      <div id="form-edit-actions">
+        <button id="btnEnabled">Editar</button>
+      </div>
+  </aside>
+  <aside id="aside-create" class="aside-info">
+      <div class="header-branch-info">
+        <p id="title-branch">Create new employee</p>
+        <i class="fas fa-times" id="close-aside-create"></i>
+      </div>
+      <hr />
+      <div class="text-field-info">
+        <label for="newName">Name: </label>
+        <input type="text" id="newName" placeholder="Type here">
+      </div>
+      <div class="text-field-info">
+        <label for="newEmail">Email: </label>
+        <input type="text" id="newEmail" placeholder="Type here">
+      </div>
+      <div class="text-field-info">
+        <label for="newPosition">Position: </label>
+        <input type="text" id="newPosition" placeholder="Type here">
+      </div>
+      <div class="text-field-info">
+        <label for="newSecret">Secret code: </label>
+        <input type="text" id="newSecret" placeholder="Type here">
+      </div>
+      <div class="text-field-info">
+        <label for="newBranch">Branch office</label>
+        <select id="newBranch">
+          <option></option>
+          <% @branches.each do |branch|%>
+            <option value=<%= branch.id %>><%= branch.name %></option>
+          <% end %>
+        </select>
+      </div>
+      <div id="form-edit-actions">
+        <button id="btnCreate">Save</button>
+      </div>
+  </aside>
+</main>
 
-<h1>Employees</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Position</th>
-      <th>Secret code</th>
-      <th>Email</th>
-      <th>Branch</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @employees.each do |employee| %>
-      <tr>
-        <td><%= employee.name %></td>
-        <td><%= employee.position %></td>
-        <td><%= employee.secret_code %></td>
-        <td><%= employee.email %></td>
-        <td><%= employee.branch.name %></td>
-        <td><%= link_to 'Show', employee %></td>
-        <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-        <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Employee', new_employee_path %>
+<script src="https://kit.fontawesome.com/e753149fdd.js" crossorigin="anonymous"></script>
+<%= javascript_pack_tag 'homepage' %>
+<%= javascript_pack_tag 'analogic' %>
+<%= javascript_pack_tag 'formCreateEmployee' %>
+<%= javascript_pack_tag 'formEditEmployee' %>
+<%= javascript_pack_tag 'changeEmployeeStatus' %>

@@ -1,0 +1,238 @@
+@import "./variables.scss";
+@import "./clearStyles.scss";
+
+.crud-forms {
+  align-items: start;
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  justify-content: center;
+
+  nav {
+    background-color: $color-primary;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    width: 12%;
+
+    .navigation-dashboard {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px 0px;
+      text-align: center;
+
+      .logo {
+        height: 45px;
+        width: 45px;
+
+        .clock-container {
+          align-items: center;
+          background-color: $color-secondary-light;
+          border-radius: 50%;
+          display: flex;
+          height: 45px;
+          justify-content: center;
+          margin-bottom: 30px;
+          width: 45px;
+
+          .clock-inside {
+            background-color: $color-secondary;
+            border-radius: inherit;
+            height: 35px;
+            position: relative;
+            width: 35px;
+
+            .minutes-logo {
+              background-color: $color-secondary-light;
+              border-radius: 10px;
+              border-radius: none;
+              height: 35%;
+              left: 50%;
+              position: absolute;
+              top: 50%;
+              transform-origin: top;
+              transform: translateX(-50%) rotate(180deg);
+              width: 3px;
+            }
+
+            .hours-logo {
+              background-color: $color-primary;
+              border-radius: 10px;
+              height: 27%;
+              left: 50%;
+              position: absolute;
+              top: 50%;
+              transform-origin: top;
+              transform: translateX(-50%) rotate(180deg);
+              width: 3px;
+            }
+          }
+        }
+      }
+
+      .title {
+        .head-title {
+          color: $font-color-primary;
+          font-size: 1.5em;
+          font-weight: 700;
+          margin-top: 10px;
+        }
+
+        .head-subtitle {
+          color: $font-color-secondary;
+          font-size: 1.2em;
+          font-weight: 400;
+        }
+      }
+
+      .menu-options {
+        padding-top: 20px;
+        width: 100%;
+
+        ul li a {
+          color: $font-color-secondary;
+          font-size: 18px;
+          font-weight: 500;
+          text-decoration: none;
+        }
+
+        ul li {
+          list-style-type: none;
+          margin-bottom: 10px;
+          padding-left: 15px;
+          text-align: left;
+          width: 100%;
+        }
+
+        ul {
+          width: 100%;
+        }
+
+        .active-option {
+          box-shadow: inset 7px 1px 0px -1px $button-success;
+
+          a {
+            color: $button-success;
+          }
+        }
+      }
+    }
+
+    .logout-container {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      width: 100%;
+
+      a {
+        background-color: $color-secondary;
+        border-radius: 10px;
+        color: $font-color-primary;
+        display: block;
+        font-size: 15px;
+        padding: 5px;
+        text-align: center;
+        text-decoration: none;
+        width: 95%;
+      }
+    }
+  }
+
+  .crud-section-forms {
+    align-items: center;
+    background-color: $color-secondary;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 88%;
+
+    header {
+      padding: 20px;
+      width: 100%;
+      .page-title {
+        color: $font-color-primary;
+        font-size: 2em;
+        font-weight: 400;
+      }
+    }
+
+    .form-crud {
+      background-color: $color-primary;
+      border-radius: 15px;
+      padding: 20px;
+      width: 40%;
+
+      .form-crud__header {
+        background-color: $color-secondary;
+        border-radius: 15px;
+        font-size: 1.3em;
+        font-weight: 500;
+        padding: 10px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .field {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 15px 0px;
+
+        label {
+          font-size: 1.2em;
+          margin-bottom: 5px;
+        }
+
+        input {
+          background-color: transparent;
+          border-radius: 6px;
+          border: 1px solid $color-secondary-light;
+          border: none;
+          color: $font-color-secondary;
+          font-size: 1.2em;
+          padding: 10px 0px;
+          text-align: center;
+          width: 80%;
+        }
+        input:focus {
+          border: 1px solid rgb(173, 173, 173);
+          color: rgb(173, 173, 173);
+          outline: none;
+        }
+      }
+
+      .links{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin: 15px 0px;
+      }
+
+      .actions {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin: 15px 0px;
+
+        input {
+          background-color: $color-secondary;
+          border-radius: 10px;
+          border: none;
+          color: $font-color-primary;
+          cursor: pointer;
+          font-size: 1.2em;
+          font-weight: 700;
+          letter-spacing: 2px;
+          margin-top: 15px;
+          padding-bottom: 10px;
+          padding-top: 10px;
+          width: 40%;
+        }
+      }
+    }
+  }
+}
