@@ -1,0 +1,27 @@
+<nav>
+  <div class="navigation-dashboard">
+    <div class="logo">
+      <div class="clock-container">
+        <div class="clock-inside">
+          <div class="minutes-logo"></div>
+          <div class="hours-logo"></div>
+        </div>
+      </div>
+    </div>
+    <div class="title">
+      <p class="head-title">Check Clock</p>
+      <p class="head-subtitle">Admin Tools</p>
+    </div>
+    <div class="menu-options">
+      <ul>
+        <li class=<%= @current_uri == "/dashboard" ? "active-option" : nil %>><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+        <li class=<%= @current_uri == "/employees" ? "active-option" : nil %>><a href="#"><i class="fas fa-users"></i> Employees</a></li>
+        <li class=<%= @current_uri == "/branches" ? "active-option" : nil %>><a href="#"><i class="fas fa-hotel"></i> Branch Offices</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="logout-container">
+    <%= link_to "Sign out", destroy_admin_session_path, :method => :delete %>
+  </div>
+</nav>
+  

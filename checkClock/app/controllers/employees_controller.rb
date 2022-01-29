@@ -7,6 +7,7 @@ class EmployeesController < ApplicationController
     @employees = Employee.all
     @attendances = Attendance.all
     @branches = Branch.all
+    @current_uri = request.env['PATH_INFO']
   end
 
   # GET /employees/1 or /employees/1.json

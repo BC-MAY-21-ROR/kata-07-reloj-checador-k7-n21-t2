@@ -6,6 +6,7 @@ class BranchesController < ApplicationController
   def index
     @branches = Branch.all
     @employees = Employee.all
+    @current_uri = request.env['PATH_INFO']
   end
 
   # GET /branches/1 or /branches/1.json

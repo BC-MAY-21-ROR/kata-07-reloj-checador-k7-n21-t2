@@ -5,6 +5,11 @@ Rails.application.routes.draw do
 
   resources :employees
   resources :branches
+
+  #reports
+  get '/attDay', to: 'reports#attendanceDay'
+  get '/AvgCheck', to: 'reports#avgCheckTime'
+  get '/absences', to: 'reports#absences'
   
   get '/dashboard', to: 'dashboard#index'
   # get '/admin-login', to: 'login#index'

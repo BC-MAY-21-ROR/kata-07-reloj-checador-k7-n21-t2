@@ -1,0 +1,23 @@
+<center>
+<h2 class ="reports-title">Average check in/out time</h2>
+<table class = "reports-table">
+  <thead>
+    <tr>
+      <th>Employee</th>
+      <th>check in time</th>
+      <th>check out time</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% @EmployeeAvgs.each do |employeeTimes| %>
+      <tr>
+      <td class = "employee-col"><a href = " <%= "employees/#{employeeTimes[:employee_id]}"%>"><%= employeeTimes[:employeeName]%> </a></td>
+        <td><%= employeeTimes[:checkInAvg] %></td>
+        <td><%= employeeTimes[:checkOutAvg] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</center>

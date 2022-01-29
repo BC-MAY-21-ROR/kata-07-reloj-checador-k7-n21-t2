@@ -1,0 +1,22 @@
+<h2 class = "reports-title">Absences Report</h2>
+
+<% @EmployeeAbsences.each do |employee| %>
+
+<table class = "reports-table">
+  <thead>
+    <tr>
+      <th class = "employee-col"><a href = " <%= "employees/#{employee[:employee_id]}"%>"><%= employee[:employeeName]%> </a></th>
+      <th>  </th>
+      <th>Total Absences: <%= employee[:totalAbsences] %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% employee[:listAbsences].each do |absence| %>
+      <tr>
+      <td><%= absence.date_absence.strftime("%d/%m/%Y") %></td> 
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
