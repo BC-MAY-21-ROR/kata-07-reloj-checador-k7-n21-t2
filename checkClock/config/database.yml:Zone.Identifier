@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=vscode-file://vscode-app/c:/Users/dany-/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-browser/workbench/workbench.html
+HostUrl=file://wsl%24/Ubuntu/home/dany-herz42/kata-07-reloj-checador-k7-n21-t2/checkClock/config/database.yml

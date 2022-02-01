@@ -1,4 +1,3 @@
-import { message } from 'statuses';
 import Swal from 'sweetalert2';
 
 let httpStatus;
@@ -99,7 +98,7 @@ async function doCheckIn(data) {
       let date = new Date(res.attendance.datetime_out)
       inptSecret.value = ""
       Swal.fire({
-        title: `Attendance Succesfully!`,
+        title: `Check out Succesfully!`,
         text: `${res.employee.name} check out at ${returnDate(date)}`,
         icon: 'success',
         iconColor: "#83DB51",
@@ -122,5 +121,6 @@ function returnDate(date) {
   if (date.getUTCHours() < 10) {
     strHour = `0${date.getUTCHours()}`
   }
+  strHour = date.getUTCHours();
   return `${strHour}:${date.getMinutes()}`
 }

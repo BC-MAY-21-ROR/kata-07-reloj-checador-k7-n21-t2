@@ -2,7 +2,7 @@ class ReportsController < ApplicationController
   def attendanceDay
     @attendancesToday = Attendance.where "DATE(datetime_in) = DATE(?)", Time.now.strftime("%F %T")
     current_uri = request.env['PATH_INFO']
-    puts current_uri
+    puts @attendancesToday
   end
 
   def avgCheckTime
@@ -10,7 +10,7 @@ class ReportsController < ApplicationController
     Employee.all.each do |employee|
       employeeAttendances = Attendance.where("employee_id = #{employee.id}")
       if employeeAttendances.empty?
-        @EmployeeAvgs.push({ :employeeName => employee.name, :employee_id => employee.id, :checkInAvg => "--", :checkOutAvg => '--' })
+        @EmployeeAvgs.push({ :employeeName => employee.name, :employee_id => employee.id, :checkInAvg => "-- : --", :checkOutAvg => '-- : --' })
       else
         #calculate the avg check time
         avgcheckTimesIn = getAvgCheckInTimes(employeeAttendances,'datetime_in')
@@ -26,7 +26,7 @@ class ReportsController < ApplicationController
     employeeAttendances.each do |attendance| 
       #check for missing data
       if attendance[check].nil?
-        return ("--")
+        return ("-- : --")
       else
         totalHours += attendance[check].hour
         totalMinutes += attendance[check].min 

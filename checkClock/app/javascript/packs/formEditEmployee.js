@@ -19,7 +19,6 @@ buttonShow.forEach(element => {
       .catch(error => console.error('Error:', error))
       .then(async response => {
         employeeData = response.data;
-        console.log(employeeData);
         inpName.value = employeeData.name;
         inpEmail.value = employeeData.email;
         inpPosition.value = employeeData.position;
@@ -188,11 +187,11 @@ function disabledInputs() {
   inpBranch.classList.remove("inputActive")
   
 
-  inpName.value = branchData.name;
-  inpEmail.value = branchData.email;
-  inpSecret.value = branchData.secret_code;
-  inpPosition.value = branchData.address;
-  inpBranch.value = branchData.name;
+  inpName.value = employeeData.name;
+  inpEmail.value = employeeData.email;
+  inpSecret.value = employeeData.secret_code;
+  inpPosition.value = employeeData.address;
+  inpBranch.value = employeeData.name;
 }
 
 //Listener to close the form
