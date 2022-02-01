@@ -1,22 +1,36 @@
-<h2 class = "reports-title">Absences Report</h2>
+<main class="report-att">
+  <%= render 'sidebar.erb' %>
+  <section class="section-main">
+    <header>
+      <p class="page-title">Attendances</p>
+      <a href="/dashboard">< Back</a>
+    </header> 
+    <div class="main">
+      <h2 class = "reports-title">Absences Report</h2>
 
-<% @EmployeeAbsences.each do |employee| %>
+      <% @EmployeeAbsences.each do |employee| %>
 
-<table class = "reports-table">
-  <thead>
-    <tr>
-      <th class = "employee-col"><a href = " <%= "employees/#{employee[:employee_id]}"%>"><%= employee[:employeeName]%> </a></th>
-      <th>  </th>
-      <th>Total Absences: <%= employee[:totalAbsences] %></th>
-    </tr>
-  </thead>
+      <table class = "reports-table">
+        <thead>
+          <tr>
+            <th class = "employee-col"><a href = " <%= "employees/#{employee[:employee_id]}"%>"><%= employee[:employeeName]%> </a></th>
+            <th>  </th>
+            <th>Total Absences: <%= employee[:totalAbsences] %></th>
+          </tr>
+        </thead>
 
-  <tbody>
-    <% employee[:listAbsences].each do |absence| %>
-      <tr>
-      <td><%= absence.date_absence.strftime("%d/%m/%Y") %></td> 
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<% end %>
+        <tbody>
+          <% employee[:listAbsences].each do |absence| %>
+            <tr>
+            <td><%= absence.date_absence.strftime("%d/%m/%Y") %></td> 
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <% end %>
+    </div>
+  </section>
+</main>
+<script src="https://kit.fontawesome.com/e753149fdd.js" crossorigin="anonymous"></script>
+<%= javascript_pack_tag 'homepage' %>
+<%= javascript_pack_tag 'analogic' %>

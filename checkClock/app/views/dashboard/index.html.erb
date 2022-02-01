@@ -7,29 +7,20 @@
     <div class="main">
       <div class="row-one">
         <div class="col-left">
-          <div class="info-branches">
-            <p class="card-title">Branches</p>
-            <p class="card-percent">65%</p>
-            <p class="card-info">of the Branches are open today</p>
-          </div>
           <div class="info-employees">
             <p class="card-title">Employees</p>
             <p class="card-percent">  <%= @percentPresent %>%</p>
             <p class="card-info">of the employees are working today</p>
           </div>
-        </div>
-        <div class="col-center">
-          <div class="link-options employees">
-            <p>Manage</p>
-            <a href="#">Employees</a>
-          </div>
-          <div class="link-options offices">
-            <p>Manage</p>
-            <a href="#">Branch Offices</a>
-          </div>
-          <div class="link-options">
-            <p>View</p>
-            <a href="#">Reports</a>
+          <div class="access-crud">
+            <div class="link-manage">
+              <p>Manage</p>
+              <a href="/branches">Branch Offices</a>
+            </div>
+            <div class="link-manage">
+              <p>Manage</p>
+              <a href="/employees">Employees</a>
+            </div>
           </div>
         </div>
         <div class="col-right">
@@ -45,6 +36,20 @@
           <div class="hour">
             <p id="hour">00:00:00</p>
           </div>
+        </div>
+      </div>
+      <div class="row-two">
+        <div class="link-reports">
+          <p>View report</p>
+          <a href="/attDay">Attendance by day</a>
+        </div>
+        <div class="link-reports">
+          <p>View report</p>
+          <a href="/AvgCheck">Check IN/OUT average</a>
+        </div>
+        <div class="link-reports">
+          <p>View report</p>
+          <a href="/absences">Absences</a>
         </div>
       </div>
   </section>

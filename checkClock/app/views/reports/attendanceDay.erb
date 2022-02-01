@@ -1,28 +1,41 @@
-<center>
-<h2 class = "reports-title">Attendance for today:
-  <b><%= Time.now.strftime("%d/%m/%Y") %></b>
-</h2>
+<main class="report-att">
+  <%= render 'sidebar.erb' %>
+  <section class="section-main">
+    <header>
+      <p class="page-title">Attendances</p>
+      <a href="/dashboard">< Back</a>
+    </header> 
+    <div class="main">
+      <center>
+        <h2 class = "reports-title">Attendance for today:
+          <b><%= Time.now.strftime("%d/%m/%Y") %></b>
+        </h2>
 
-<table class = "reports-table">
-  <thead>
-    <tr>
-      <th>Employee:</th>
-      <th>check in time:</th>
-      <th>check out time:</th>
-    </tr>
-  </thead>
+        <table class = "reports-table">
+          <thead>
+            <tr>
+              <th>Employee:</th>
+              <th>check in time:</th>
+              <th>check out time:</th>
+            </tr>
+          </thead>
 
-  <tbody>
+          <tbody>
 
-    <% @attendancesToday.each do |attendance| %>
-      <tr>
-        <td class = "employee-col"><a href = " <%= "employees/#{attendance.employee.id}"%>"><%= attendance.employee.name%> </a></td>
-        <td><%= attendance.datetime_in.strftime("%H:%M") %></td>
-        <td><%= attendance.datetime_out.strftime("%H:%M") %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
-</center>
-
+            <% @attendancesToday.each do |attendance| %>
+              <tr>
+                <td class = "employee-col"><a href = " <%= "employees/#{attendance.employee.id}"%>"><%= attendance.employee.name%> </a></td>
+                <td><%= attendance.datetime_in.strftime("%H:%M") %></td>
+                <td><%= attendance.datetime_out.nil? ? "-- : --" : attendance.datetime_out.strftime("%H:%M") %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <br>
+      </center>
+    </div>
+  </section>
+</main>
+<script src="https://kit.fontawesome.com/e753149fdd.js" crossorigin="anonymous"></script>
+<%= javascript_pack_tag 'homepage' %>
+<%= javascript_pack_tag 'analogic' %>

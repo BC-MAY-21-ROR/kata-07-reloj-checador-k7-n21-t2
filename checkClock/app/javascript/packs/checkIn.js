@@ -1,4 +1,5 @@
 import Swal from 'sweetalert2';
+import url from './url';
 
 let httpStatus;
 
@@ -32,7 +33,7 @@ btnCheckIn.addEventListener("click", () => {
 
 async function doCheckIn(data) {
   try {
-    const response = await fetch(`http://localhost:3000/check-employee`, {
+    const response = await fetch(`${url}/check-employee`, {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
@@ -85,7 +86,7 @@ async function doCheckIn(data) {
       let date = new Date(res.attendance.datetime_in)
       inptSecret.value = ""
       Swal.fire({
-        title: `Attendance Succesfully!`,
+        title: `Check in Succesfully!`,
         text: `${res.employee.name} check in at ${returnDate(date)}`,
         icon: 'success',
         iconColor: "#83DB51",
@@ -108,5 +109,6 @@ function returnDate(date) {
   if (date.getUTCHours() < 10) {
     strHour = `0${date.getUTCHours()}`
   }
+  strHour = date.getUTCHours();
   return `${strHour}:${date.getMinutes()}`
 }

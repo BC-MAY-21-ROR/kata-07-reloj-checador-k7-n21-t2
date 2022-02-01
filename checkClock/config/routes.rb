@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   devise_for :admins
 
-  root to: "home#index"
+  root "home#index"
 
   resources :employees
   resources :branches
+
+  # get '/employees-check', to: "home#index"
 
   #reports
   get '/attDay', to: 'reports#attendanceDay'
