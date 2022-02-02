@@ -1,2 +1,2 @@
-const url = "http://localhost:3000";
+const url = "https://reloj-checador-t2.herokuapp.com";
 export default url;
